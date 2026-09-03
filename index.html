@@ -1,63 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V S S Anirudh Sharma - ML Engineer Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anirudh Sharma — AI/ML engineer, researcher and builder working across production ML, LLM systems, agents, evaluation and reasoning." />
+  <meta name="theme-color" content="#07090d" />
+  <title>Anirudh Sharma — AI/ML Engineer · Researcher · Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header id="header">
-    <div class="container">
-      <div class="header-content">
-        <div class="profile-img">
-          <img src="assets/images/profile.png" alt="Profile Picture">
-        </div>
-        <div class="header-info">
-          <h1>V S S Anirudh Sharma</h1>
-          <nav>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
+  <div class="noise"></div>
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="Home"><span class="brand-mark">AS</span><span>Anirudh Sharma</span></a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#research">Research</a>
+        <a href="#story">Story</a>
+        <a href="#contact">Contact</a>
       </div>
-    </div>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">◐</button>
+    </nav>
   </header>
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>Software developer at Oracle Financial Services Software. Minors in Artificial Intelligence and Machine Learning from IIT Madras.</p>
-    </div>
-  </section>
+  <main id="top">
+    <section class="hero container reveal">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> Hyderabad · Building AI systems that ship</div>
+        <h1>I build AI systems<br><span class="gradient-text">beyond the demo.</span></h1>
+        <p class="hero-lead">AI/ML engineer, researcher and builder working across <strong>production machine learning</strong>, <strong>LLM systems</strong>, <strong>agents</strong>, <strong>evaluation</strong>, and <strong>inference-time reasoning</strong>.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore selected work <span>↘</span></a>
+          <a class="button ghost" href="https://github.com/showman-sharma" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <div class="hero-signals">
+          <div><span class="signal-value">4+</span><span class="signal-label">years building software & ML</span></div>
+          <div><span class="signal-value">Research</span><span class="signal-label">code generation · reasoning · KGs</span></div>
+          <div><span class="signal-value">Enterprise</span><span class="signal-label">ML systems designed for real products</span></div>
+        </div>
+      </div>
 
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div id="projects-container"></div>
-    </div>
-  </section>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div>
+        <div class="terminal-card glass tilt-card">
+          <div class="terminal-top"><span></span><span></span><span></span><em>system.profile</em></div>
+          <pre><code><span class="muted">$</span> whoami
+<span class="accent">anirudh</span> = {
+  role: <span class="string">"AI/ML Engineer"</span>,
+  mode: <span class="string">"research + systems"</span>,
+  interests: [
+    <span class="string">"agents"</span>, <span class="string">"evaluation"</span>,
+    <span class="string">"reasoning"</span>, <span class="string">"production ML"</span>
+  ]
+}
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: vanirudhsharma@gmail.com</li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/v-s-s-anirudh-sharma-ab405617b">v-s-s-anirudh-sharma-ab405617b</a></li>
-        <li>GitHub: <a href="https://github.com/showman-sharma">showman-sharma</a></li>
-      </ul>
-    </div>
-  </section>
+<span class="muted">$</span> current_focus
+→ reliable AI that survives <span class="accent">contact with reality</span><span class="blink">_</span></code></pre>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 V S S Anirudh Sharma - ML Engineer Portfolio. All rights reserved.</p>
-    </div>
-  </footer>
+    <section class="marquee-section" aria-label="Areas of work">
+      <div class="marquee"><span>PRODUCTION ML · LLM SYSTEMS · AGENTS · EVALUATION · RAG · KNOWLEDGE GRAPHS · INFERENCE-TIME REASONING · AI PRODUCT ENGINEERING · </span><span>PRODUCTION ML · LLM SYSTEMS · AGENTS · EVALUATION · RAG · KNOWLEDGE GRAPHS · INFERENCE-TIME REASONING · AI PRODUCT ENGINEERING · </span></div>
+    </section>
 
+    <section id="work" class="section container">
+      <div class="section-head reveal">
+        <div><span class="kicker">01 / SELECTED WORK</span><h2>A portfolio of systems,<br>not a pile of notebooks.</h2></div>
+        <p>Projects are selected for technical depth, research value, systems thinking, or originality. The older work stays visible — but it no longer defines the storefront.</p>
+      </div>
+
+      <div class="filter-bar reveal" id="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="research">Research</button>
+        <button class="filter" data-filter="systems">AI Systems</button>
+        <button class="filter" data-filter="ml">ML</button>
+        <button class="filter" data-filter="community">Open Source</button>
+      </div>
+      <div id="project-grid" class="project-grid"></div>
+    </section>
+
+    <section id="research" class="section research-band">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="kicker">02 / RESEARCH</span><h2>How do we get more<br>from the intelligence we already have?</h2></div>
+          <p>My research gravitates toward capability amplification, reliable reasoning and evaluation — especially when better system design can matter as much as a bigger model.</p>
+        </div>
+        <div class="research-grid reveal">
+          <article class="research-card featured">
+            <div class="research-meta"><span>IEEE ICDH 2026</span><span>Biomedical AI</span></div>
+            <h3>Drug–Adverse Event Reasoning with Knowledge Graphs</h3>
+            <p>Interpretable multi-source reasoning across CADEC, RxNorm and the Ontology of Adverse Events, combining entity linking, semantic retrieval and graph-path evidence.</p>
+            <a href="https://github.com/showman-sharma/drug_ae_reasoner" target="_blank" rel="noreferrer">Explore research artifact ↗</a>
+          </article>
+          <article class="research-card">
+            <div class="research-meta"><span>Code Generation</span><span>Evaluation</span></div>
+            <h3>Inference-time strategies for code generation</h3>
+            <p>HumanEval experiments across structured reasoning, self-consistency, planning, refinement, recursive criticism and test-based enhancement.</p>
+            <a href="https://github.com/showman-sharma/codegen-ui-research" target="_blank" rel="noreferrer">See experiments ↗</a>
+          </article>
+          <article class="research-card">
+            <div class="research-meta"><span>Ongoing</span><span>Agents</span></div>
+            <h3>Reliable agents & evaluation</h3>
+            <p>Current exploration: agent architecture, tool use, failure analysis, evaluation methodology and the engineering needed to move from autonomous demos to dependable products.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section container">
+      <div class="section-head reveal">
+        <div><span class="kicker">03 / ENGINEERING STORY</span><h2>From software foundations<br>to enterprise AI systems.</h2></div>
+        <p>The thread through my work is increasingly clear: understand the mechanism, build the system, measure it, then make it useful to somebody.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item"><span class="year">2021–22</span><div><h3>Exploration</h3><p>Computer vision, reinforcement learning, information retrieval, bio-inspired learning, data science and software experiments. Breadth first.</p></div></div>
+        <div class="timeline-item"><span class="year">2022–24</span><div><h3>Enterprise engineering</h3><p>Software-product foundations evolved into applied ML: anomaly detection, predictive systems, explainability and practical deployment constraints.</p></div></div>
+        <div class="timeline-item"><span class="year">2024–26</span><div><h3>LLMs & research</h3><p>Code generation, prompt engineering, RAG, document intelligence, knowledge graphs, inference-time methods and research-grade evaluation.</p></div></div>
+        <div class="timeline-item"><span class="year">Now</span><div><h3>AI systems</h3><p>Agents, evaluation, inference-time compute, production AI architecture and the reliability layer between a capable model and a trustworthy product.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section container reveal">
+      <div class="manifesto glass">
+        <span class="kicker">OPERATING PRINCIPLE</span>
+        <p>“The interesting part of AI engineering starts when <em>the model works</em> — and you still have to make the <strong>system</strong> work.”</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section container contact reveal">
+      <span class="kicker">04 / CONTACT</span>
+      <h2>Build something difficult.<br><span class="gradient-text">Then make it useful.</span></h2>
+      <p>Interested in AI/ML engineering, research collaboration, agents, evaluation, enterprise AI systems or ambitious open-source work? Reach out.</p>
+      <div class="contact-links">
+        <a href="mailto:vanirudhsharma@gmail.com">Email ↗</a>
+        <a href="https://www.linkedin.com/in/v-s-s-anirudh-sharma-ab405617b/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/showman-sharma" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://twitter.com/v_anirudhsharma" target="_blank" rel="noreferrer">X ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer"><span>© <span id="year"></span> Anirudh Sharma</span><span>AI research · engineering · products</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
