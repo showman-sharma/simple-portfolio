@@ -1,0 +1,1 @@
+Images on the portfolio are embedded directly in the page for reliable GitHub Pages rendering.
