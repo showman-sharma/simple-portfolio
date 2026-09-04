@@ -209,5 +209,106 @@ async function loadSeasonalLayer() {
   }
 }
 
+// --- Writing index -------------------------------------------------------
+// Writing may link to LinkedIn, Substack/other public blogs, or portfolio-native
+// articles. The renderer rejects malformed records and unsafe URLs.
+const ARTICLE_LIMITS = {
+  title: 140,
+  source: 30,
+  summary: 240,
+  tag: 32
+};
+
+function safePublicUrl(value) {
+  if (typeof value !== "string" || value.length > 500) return null;
+  try {
+    const url = new URL(value, window.location.href);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+    return url.href;
+  } catch (_) {
+    return null;
+  }
+}
+
+function formatArticleDate(date) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date || "")) return "";
+  const [y, m, d] = date.split("-").map(Number);
+  const parsed = new Date(y, m - 1, d);
+  return parsed.toLocaleDateString("en", { year: "numeric", month: "short", day: "numeric" });
+}
+
+function makeArticleCard(article) {
+  const title = safeText(article.title, ARTICLE_LIMITS.title);
+  const source = safeText(article.source, ARTICLE_LIMITS.source);
+  const summary = safeText(article.summary, ARTICLE_LIMITS.summary);
+  const url = safePublicUrl(article.url);
+  const date = formatArticleDate(article.date);
+  if (!title || !source || !summary || !url || !date) return null;
+
+  const card = document.createElement("article");
+  card.className = `writing-card${article.featured === true ? " featured" : ""}`;
+
+  const meta = document.createElement("div");
+  meta.className = "writing-meta";
+  const sourceEl = document.createElement("span");
+  sourceEl.textContent = source;
+  const dateEl = document.createElement("span");
+  dateEl.textContent = date;
+  meta.append(sourceEl, dateEl);
+
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+
+  const description = document.createElement("p");
+  description.textContent = summary;
+
+  const tags = document.createElement("div");
+  tags.className = "tags";
+  if (Array.isArray(article.tags)) {
+    article.tags.slice(0, 4).forEach(tag => {
+      const clean = safeText(tag, ARTICLE_LIMITS.tag);
+      if (!clean) return;
+      const tagEl = document.createElement("span");
+      tagEl.className = "tag";
+      tagEl.textContent = clean;
+      tags.appendChild(tagEl);
+    });
+  }
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.className = "writing-link";
+  link.textContent = `Read on ${source} ↗`;
+
+  card.append(meta, heading, description, tags, link);
+  return card;
+}
+
+async function loadWriting() {
+  const grid = document.getElementById("writing-grid");
+  if (!grid) return;
+  try {
+    const response = await fetch("data/articles.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    if (data.schema_version !== 1 || !Array.isArray(data.articles)) return;
+
+    const valid = data.articles
+      .filter(a => a && a.published !== false)
+      .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+      .slice(0, 6)
+      .map(makeArticleCard)
+      .filter(Boolean);
+
+    if (!valid.length) return;
+    grid.replaceChildren(...valid);
+  } catch (_) {
+    // Keep the static fallback card if the index cannot be loaded.
+  }
+}
+
 loadPortfolioState();
 loadSeasonalLayer();
+loadWriting();
