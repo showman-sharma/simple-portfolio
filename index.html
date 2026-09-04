@@ -20,7 +20,7 @@
     <nav class="nav container">
       <a class="brand" href="#top"><span class="brand-mark">AS</span><span>Anirudh Sharma</span></a>
       <div class="nav-links">
-        <a href="#work">Work</a><a href="#research">Research</a><a href="#story">Story</a><a href="#about">Me, apparently</a><a href="#contact">Say hi</a>
+        <a href="#work">Work</a><a href="#research">Research</a><a href="#story">Story</a><a href="#about">About</a><a href="#contact">Contact</a>
       </div>
       <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">☀︎</button>
     </nav>
@@ -29,18 +29,18 @@
   <main id="top">
     <section class="hero container reveal">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> Hyderabad · AI systems · research · a suspicious amount of curiosity</div>
-        <h1>I build AI systems.<br><span class="gradient-text">And I like having a life.</span></h1>
-        <p class="hero-lead">I'm <strong>Anirudh</strong> — an AI/ML engineer, researcher and builder working across production ML, LLMs, agents, retrieval, evaluation and reasoning. I like hard technical problems, clear explanations, ambitious side quests and people who are excited about what they build.</p>
+        <div class="eyebrow"><span class="status-dot"></span><span id="seasonal-greeting" hidden></span><span id="hero-eyebrow">Hyderabad · AI systems · research · engineering</span></div>
+        <h1>Building AI systems<br><span class="gradient-text">that survive reality.</span></h1>
+        <p class="hero-lead">I'm <strong>Anirudh</strong> — an AI/ML engineer, researcher and builder working across production ML, LLM systems, agents, retrieval, evaluation and reasoning. I care about systems that are useful, measurable and dependable beyond the demo.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#work">See the good stuff ↓</a>
+          <a class="button primary" href="#work">Selected work ↓</a>
           <a class="button ghost" href="https://github.com/showman-sharma" target="_blank" rel="noreferrer">GitHub ↗</a>
           <a class="button ghost" href="https://www.linkedin.com/in/ml-engineer-v-s-s-anirudh-sharma/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>
         <div class="hero-signals">
           <div><span class="signal-value">4+</span><span class="signal-label">years building software & ML</span></div>
           <div><span class="signal-value">Research</span><span class="signal-label">reasoning · codegen · knowledge graphs</span></div>
-          <div><span class="signal-value">Also me</span><span class="signal-label">drawing · cinema · travel · stage time</span></div>
+          <div><span class="signal-value">Systems</span><span class="signal-label">agents · retrieval · evaluation · reliability</span></div>
         </div>
       </div>
 
@@ -48,64 +48,70 @@
         <div class="blob blob-yellow"></div><div class="blob blob-pink"></div><div class="blob blob-blue"></div>
         <figure class="photo-card tilt-card">
           <img src="assets/images/hero-suit.jpg" alt="Anirudh Sharma smiling in a grey suit" />
-          <figcaption><strong>Hi. This is me.</strong><span>Engineer by profession. Showman by GitHub username. Fair warning.</span></figcaption>
+          <figcaption><strong>Anirudh Sharma</strong><span>Engineer · researcher · builder</span></figcaption>
         </figure>
-        <div class="sticker sticker-one">BUILD ✦ THINK ✦ SHIP</div>
-        <div class="sticker sticker-two">occasionally touch grass ☀</div>
+        <div class="sticker sticker-one">BUILD ✦ MEASURE ✦ SHIP</div>
+        <div class="sticker sticker-two">systems, not demos</div>
       </div>
     </section>
 
-    <section class="marquee-section"><div class="marquee"><span>PRODUCTION ML ✦ LLM SYSTEMS ✦ AGENTS ✦ EVALUATION ✦ RAG ✦ KNOWLEDGE GRAPHS ✦ REASONING ✦ OPEN SOURCE ✦ DRAWING ✦ WRITING ✦ CINEMA ✦ </span><span>PRODUCTION ML ✦ LLM SYSTEMS ✦ AGENTS ✦ EVALUATION ✦ RAG ✦ KNOWLEDGE GRAPHS ✦ REASONING ✦ OPEN SOURCE ✦ DRAWING ✦ WRITING ✦ CINEMA ✦ </span></div></section>
+    <section class="marquee-section"><div class="marquee"><span>PRODUCTION ML ✦ LLM SYSTEMS ✦ AGENTS ✦ EVALUATION ✦ RAG ✦ KNOWLEDGE GRAPHS ✦ REASONING ✦ OPEN SOURCE ✦ </span><span>PRODUCTION ML ✦ LLM SYSTEMS ✦ AGENTS ✦ EVALUATION ✦ RAG ✦ KNOWLEDGE GRAPHS ✦ REASONING ✦ OPEN SOURCE ✦ </span></div></section>
+
+    <section class="now-strip container reveal" aria-labelledby="now-title">
+      <div><span class="kicker">CURRENTLY</span><h2 id="now-title">What I'm going deep on now.</h2></div>
+      <div class="now-grid">
+        <div><span class="now-label">FOCUS</span><p id="current-focus">Reliable agentic AI systems</p></div>
+        <div><span class="now-label">QUESTION</span><p id="current-question">How do we evaluate and diagnose tool-using agents under real failure modes?</p></div>
+        <div><span class="now-label">LATEST MILESTONE</span><p id="current-milestone">Drug–Adverse Event Reasoning accepted at IEEE ICDH 2026</p></div>
+      </div>
+      <span id="state-updated" class="state-updated"></span>
+    </section>
 
     <section id="work" class="section container">
-      <div class="section-head reveal"><div><span class="kicker">01 / THINGS I BUILT</span><h2>Useful systems.<br>Interesting rabbit holes.</h2></div><p>I like projects that make me learn something, prove something, or ship something. Preferably all three.</p></div>
+      <div class="section-head reveal"><div><span class="kicker">01 / SELECTED WORK</span><h2>Systems, experiments<br>and useful rabbit holes.</h2></div><p>Projects stay here when they demonstrate real engineering, research, or reusable work — not simply because they exist.</p></div>
       <div class="filter-bar reveal" id="filters"><button class="filter active" data-filter="all">Everything</button><button class="filter" data-filter="research">Research</button><button class="filter" data-filter="systems">AI systems</button><button class="filter" data-filter="ml">ML</button><button class="filter" data-filter="community">Open source</button></div>
       <div id="project-grid" class="project-grid"></div>
     </section>
 
     <section id="research" class="section research-band">
       <div class="container">
-        <div class="section-head reveal"><div><span class="kicker">02 / RESEARCH</span><h2>I enjoy asking,<br>“but does it actually work?”</h2></div><p>My research tends to orbit capability amplification, reasoning, evaluation and ways of getting better AI systems without blindly reaching for a bigger model.</p></div>
+        <div class="section-head reveal"><div><span class="kicker">02 / RESEARCH</span><h2>Does it actually work?</h2></div><p>I am interested in capability amplification, reasoning, evaluation and methods that improve AI systems without treating model scale as the only answer.</p></div>
         <div class="research-grid reveal">
           <article class="research-card featured"><div class="research-meta"><span>IEEE ICDH 2026</span><span>Biomedical AI</span></div><h3>Drug–Adverse Event Reasoning with Knowledge Graphs</h3><p>Multi-source reasoning across CADEC, RxNorm and OAE with entity linking, semantic retrieval and interpretable graph-path evidence.</p><a href="https://github.com/showman-sharma/drug_ae_reasoner" target="_blank">Explore ↗</a></article>
           <article class="research-card"><div class="research-meta"><span>Code Generation</span><span>Evaluation</span></div><h3>Inference-time strategies for code generation</h3><p>HumanEval experiments across self-consistency, structured reasoning, planning, refinement, recursive criticism and test-based enhancement.</p><a href="https://github.com/showman-sharma/codegen-ui-research" target="_blank">See experiments ↗</a></article>
-          <article class="research-card"><div class="research-meta"><span>Currently curious about</span><span>Agents</span></div><h3>Reliable agents that do more than look cool in demos</h3><p>Tool use, failure analysis, evaluation, enterprise capability exposure and the engineering required to make agentic systems dependable.</p></article>
+          <article class="research-card"><div class="research-meta"><span>Current direction</span><span>Agents</span></div><h3>Reliable agentic AI systems</h3><p>Tool use, failure analysis, evaluation, retrieval, observability and the engineering required to make agents dependable in real products.</p></article>
         </div>
       </div>
     </section>
 
     <section id="story" class="section container">
-      <div class="section-head reveal"><div><span class="kicker">03 / THE PLOT SO FAR</span><h2>From “how does this work?”<br>to “how do we make this reusable?”</h2></div><p>The trajectory matters more to me than a wall of technology logos.</p></div>
+      <div class="section-head reveal"><div><span class="kicker">03 / TRAJECTORY</span><h2>From models<br>to the systems around them.</h2></div><p>The through-line is increasingly clear: make AI useful in production, then make the capability reusable and reliable.</p></div>
       <div class="timeline reveal">
-        <div class="timeline-item"><span class="year">2021–22</span><div><h3>Try everything</h3><p>Robotics, computer vision, reinforcement learning, information retrieval, bio-inspired learning, data science. A very healthy amount of curiosity.</p></div></div>
-        <div class="timeline-item"><span class="year">2022–24</span><div><h3>Make ML survive reality</h3><p>Enterprise software foundations turned into anomaly detection, predictive ML, explainability and production constraints.</p></div></div>
-        <div class="timeline-item"><span class="year">2024–26</span><div><h3>LLMs, RAG & research</h3><p>Prompt engineering, code generation, retrieval, document intelligence, knowledge graphs and inference-time methods.</p></div></div>
-        <div class="timeline-item"><span class="year">Now</span><div><h3>Build the system around the model</h3><p>Agents, evaluation, reusable AI platforms, enterprise integrations and the architecture that lets other engineers move faster too.</p></div></div>
+        <div class="timeline-item"><span class="year">2021–22</span><div><h3>Explore broadly</h3><p>Robotics, computer vision, reinforcement learning, information retrieval, bio-inspired learning and data science.</p></div></div>
+        <div class="timeline-item"><span class="year">2022–24</span><div><h3>Production ML</h3><p>Enterprise software foundations turned into anomaly detection, predictive ML, explainability and production constraints.</p></div></div>
+        <div class="timeline-item"><span class="year">2024–26</span><div><h3>LLMs, retrieval & research</h3><p>Prompt engineering, code generation, document intelligence, RAG, knowledge graphs and inference-time methods.</p></div></div>
+        <div class="timeline-item"><span class="year">Now</span><div><h3>Reliable AI systems</h3><p>Agents, evaluation, reusable AI platforms, enterprise integrations and architecture that helps other engineers move faster.</p></div></div>
       </div>
     </section>
 
     <section id="about" class="section container reveal">
-      <div class="about-panel">
+      <div class="about-panel about-clean">
         <div class="about-copy">
-          <span class="kicker">04 / THE PERSON, NOT THE RESUME</span>
-          <h2>There is, in fact,<br>life outside the repo.</h2>
-          <p>I write, draw, travel, make videos, obsess over films, get on stages, tell jokes, and occasionally spend far too long making something look just right.</p>
-          <p>That same energy shows up professionally too — in demos, teaching, architecture discussions, writing, mentoring and getting people excited enough to actually use what we build.</p>
-          <div class="about-chips"><span>AI systems</span><span>research</span><span>drawing</span><span>cinema</span><span>travel</span><span>stage time</span><span>mild chaos</span></div>
-        </div>
-        <div class="happy-card image-fallback-card">
-          <img src="assets/images/profile.png" alt="Anirudh Sharma" />
-          <div class="happy-note">Technical depth. Creative side quests. Frequently unnecessary jokes.</div>
+          <span class="kicker">04 / ABOUT</span>
+          <h2>Technical work,<br>with a human behind it.</h2>
+          <p>Outside engineering, I write, draw, care far too much about cinema, and occasionally get on stage. Those interests stay here because they say something about how I communicate and create — not because this site needs to become a diary.</p>
+          <p>Professionally, I enjoy the overlap between engineering, research, architecture, explanation and helping teams turn ideas into systems people can actually use.</p>
+          <div class="about-chips"><span>AI systems</span><span>research</span><span>writing</span><span>drawing</span><span>cinema</span><span>stage</span></div>
         </div>
       </div>
     </section>
 
     <section class="section container reveal"><div class="manifesto"><span class="kicker">A LINE I LIKE</span><p><strong>I do everything sincerely.</strong><br>I take nothing seriously.</p></div></section>
 
-    <section id="contact" class="section container contact reveal"><span class="kicker">05 / SAY HELLO</span><h2>Good problem?<br><span class="gradient-text">Interesting people?</span></h2><p>AI engineering, research, agents, evaluation, open source, startup ideas, writing, cinema, or just an unexpectedly good conversation — I'm usually game.</p><div class="contact-links"><a href="mailto:vanirudhsharma@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/ml-engineer-v-s-s-anirudh-sharma/" target="_blank">LinkedIn ↗</a><a href="https://github.com/showman-sharma" target="_blank">GitHub ↗</a><a href="https://x.com/showman_sharma" target="_blank">X ↗</a><a href="https://www.instagram.com/showman_sharma/" target="_blank">Instagram ↗</a><a href="https://www.instagram.com/stupid_bag_of_words/" target="_blank">Stupid Bag of Words ↗</a></div></section>
+    <section id="contact" class="section container contact reveal"><span class="kicker">05 / CONTACT</span><h2>Good problem?<br><span class="gradient-text">Interesting people?</span></h2><p>AI engineering, research, agents, evaluation, open source, startup ideas, writing or a worthwhile technical conversation — say hello.</p><div class="contact-links"><a href="mailto:vanirudhsharma@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/ml-engineer-v-s-s-anirudh-sharma/" target="_blank">LinkedIn ↗</a><a href="https://github.com/showman-sharma" target="_blank">GitHub ↗</a><a href="https://x.com/showman_sharma" target="_blank">X ↗</a><a href="https://www.instagram.com/showman_sharma/" target="_blank">Instagram ↗</a><a href="https://www.instagram.com/stupid_bag_of_words/" target="_blank">Writing ↗</a></div></section>
   </main>
 
-  <footer class="container footer"><span>© <span id="year"></span> Anirudh Sharma</span><span>AI systems · research · side quests</span></footer>
+  <footer class="container footer"><span>© <span id="year"></span> Anirudh Sharma</span><span>AI systems · research · engineering</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
