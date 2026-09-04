@@ -114,3 +114,100 @@ if (tilt && window.matchMedia("(min-width: 851px)").matches) {
     tilt.style.transform = "perspective(1000px) rotateY(-5deg) rotateX(3deg)";
   });
 }
+
+// --- Guardrailed dynamic portfolio layer ---------------------------------
+// Only explicitly allowlisted public-facing fields are rendered.
+// All values are inserted with textContent, never innerHTML.
+const FIELD_LIMITS = {
+  focus: 90,
+  question: 180,
+  milestone: 160
+};
+
+function safeText(value, maxLength) {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  if (!trimmed || trimmed.length > maxLength) return null;
+  return trimmed;
+}
+
+async function loadPortfolioState() {
+  try {
+    const response = await fetch("data/portfolio-state.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    if (data.schema_version !== 1 || !data.current) return;
+
+    const mappings = [
+      ["focus", "current-focus"],
+      ["question", "current-question"],
+      ["milestone", "current-milestone"]
+    ];
+
+    mappings.forEach(([field, id]) => {
+      const value = safeText(data.current[field], FIELD_LIMITS[field]);
+      const el = document.getElementById(id);
+      if (value && el) el.textContent = value;
+    });
+
+    const updated = safeText(data.last_updated, 10);
+    const updatedEl = document.getElementById("state-updated");
+    if (updated && /^\d{4}-\d{2}-\d{2}$/.test(updated) && updatedEl) {
+      updatedEl.textContent = `Public focus updated ${updated}`;
+    }
+  } catch (_) {
+    // Static HTML fallbacks remain visible if the data file is unavailable.
+  }
+}
+
+const seasonalThemes = {
+  warm: { yellow: "#ffcf4a", pink: "#ff7f87", orange: "#ff934d" },
+  harvest: { yellow: "#ffd166", pink: "#f28482", orange: "#f6a545" },
+  midnight: { yellow: "#ffe08a", pink: "#d7a6ff", orange: "#8bc6ff" }
+};
+
+function localIsoDate() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+async function loadSeasonalLayer() {
+  try {
+    const response = await fetch("data/seasonal.json", { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    if (data.schema_version !== 1 || !Array.isArray(data.occasions)) return;
+
+    const today = localIsoDate();
+    const active = data.occasions.find(o =>
+      o && o.enabled === true &&
+      /^\d{4}-\d{2}-\d{2}$/.test(o.start || "") &&
+      /^\d{4}-\d{2}-\d{2}$/.test(o.end || "") &&
+      today >= o.start && today <= o.end &&
+      seasonalThemes[o.theme]
+    );
+    if (!active) return;
+
+    const label = safeText(active.label, 60);
+    const greeting = document.getElementById("seasonal-greeting");
+    const regular = document.getElementById("hero-eyebrow");
+    if (label && greeting) {
+      greeting.textContent = `${label} · `;
+      greeting.hidden = false;
+    }
+    if (regular) regular.textContent = "Hyderabad · AI systems · research · engineering";
+
+    const palette = seasonalThemes[active.theme];
+    document.documentElement.style.setProperty("--yellow", palette.yellow);
+    document.documentElement.style.setProperty("--pink", palette.pink);
+    document.documentElement.style.setProperty("--orange", palette.orange);
+  } catch (_) {
+    // Seasonal treatment is optional; the base portfolio is always the fallback.
+  }
+}
+
+loadPortfolioState();
+loadSeasonalLayer();
