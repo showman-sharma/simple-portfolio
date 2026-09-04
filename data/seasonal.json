@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "occasions": [
+    {
+      "id": "new-year-2027",
+      "label": "Happy New Year ✨",
+      "start": "2026-12-31",
+      "end": "2027-01-02",
+      "theme": "midnight",
+      "enabled": true
+    }
+  ]
+}
