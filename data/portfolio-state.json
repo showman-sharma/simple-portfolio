@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-09-04",
+  "last_updated": "2026-09-05",
   "current": {
     "focus": "Reliable agentic AI systems",
     "question": "How do we evaluate and diagnose tool-using agents under real failure modes?",
-    "milestone": "Drug–Adverse Event Reasoning accepted at IEEE ICDH 2026"
+    "milestone": "First research paper published on IEEE Xplore — IEEE ICDH 2026"
   }
 }
