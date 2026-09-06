@@ -31,6 +31,48 @@ Do **not** use the state file for:
 
 Rule: **If the update helps a stranger understand technical direction, evidence of work, or public creative/professional identity, it may belong. If it merely tells them what happened in private life, it does not.**
 
+## Selected public projects
+
+`data/projects.json` is the single canonical source for the project grid.
+
+Only showcase-quality public work should appear there. Older coursework and historical repositories may remain on GitHub, but they should not leak back into the portfolio simply because they exist.
+
+Project records should contain:
+- `title`
+- `category`
+- `description`
+- short `tags`
+- public `github` URL
+
+The renderer validates text length and URLs and inserts project content through DOM text nodes rather than interpolating untrusted HTML.
+
+Do not create a second project inventory elsewhere in the repository. If the curated set changes, update `data/projects.json` only.
+
+## Enterprise AI Engineering section
+
+The Enterprise AI Engineering section exists to prove the production/product-engineering side of Anirudh's work without exposing employer-confidential material.
+
+Allowed content:
+- sanitized descriptions of engineering scope
+- public-safe technology categories
+- lifecycle responsibilities such as data, model engineering, integration, engineering validation, QA handoff/support, deployment support and release readiness
+- reusable-platform and technical-leadership patterns
+- conservative outcomes that are already safe to disclose
+
+Do not publish:
+- customer names unless already explicitly cleared/public
+- customer or production data
+- screenshots of internal systems
+- internal architecture diagrams
+- proprietary code
+- unpublished feature details
+- internal ticket/document identifiers
+- confidential performance numbers
+- patent/IP details that are not already publicly cleared
+- language claiming that Anirudh performed or owned QA
+
+The correct QA framing is: **engineering validation + delivery to QA + QA support/triage + issue investigation + stabilization + release readiness.**
+
 ## Writing index
 
 `data/articles.json` is the canonical index of Anirudh Sharma's public writing across platforms.
@@ -118,11 +160,11 @@ For movable festivals, add the exact date window for that year after verifying t
 The browser code:
 - accepts only an allowlist of state fields
 - enforces length limits
-- inserts portfolio-state and article copy via `textContent`, never unsanitized HTML
+- inserts portfolio-state, project and article copy through safe DOM text APIs
 - validates ISO date formats
-- validates article URLs
+- validates public URLs
 - accepts only pre-defined seasonal theme names
-- falls back to static HTML if JSON is absent or malformed
+- falls back safely if JSON is absent or malformed
 
 This means a broken or incomplete dynamic update should not break the portfolio.
 
@@ -131,16 +173,17 @@ This means a broken or incomplete dynamic update should not break the portfolio.
 When updating through ChatGPT or another agent:
 
 1. Read this file first.
-2. Read the relevant current data file (`portfolio-state.json`, `articles.json`, or `seasonal.json`).
+2. Read the relevant current data file (`portfolio-state.json`, `projects.json`, `articles.json`, or `seasonal.json`).
 3. Decide whether the requested change passes the applicable threshold.
 4. Reject or omit private, ephemeral, unverifiable, confidential, or over-personal content.
 5. Update only the smallest relevant field/record.
 6. Preserve schemas and date formats.
 7. Do not rewrite the main portfolio copy merely because dynamic state changed.
 8. For writing, link to the original publication unless the essay intentionally lives on the portfolio.
+9. For enterprise experience, prefer sanitized engineering patterns over internal names and implementation detail.
 
 ## Design principle
 
 **Stable identity, current evidence, restrained personality.**
 
-The portfolio should function as the public website for Anirudh Sharma: a coherent home for selected work, research, public writing, technical direction and contact information — with enough personality to feel human, but without becoming a life feed.
+The portfolio should function as the public website for Anirudh Sharma: a coherent home for enterprise engineering, selected public work, research, writing, technical direction and contact information — with enough personality to feel human, but without becoming a life feed.
