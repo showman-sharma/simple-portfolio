@@ -15,36 +15,36 @@
   <link rel="stylesheet" href="enterprise.css" />
   <link rel="stylesheet" href="lore.css" />
   <style>
-    .atlas-nav{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(232,211,169,.92);backdrop-filter:blur(10px);box-shadow:0 1px rgba(85,59,35,.18)}
+    .atlas-nav{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(241,238,231,.94);backdrop-filter:blur(12px);box-shadow:0 1px rgba(73,65,55,.14)}
     .atlas-nav .brand-avatar{width:38px;height:38px;object-fit:cover;border-radius:50%}
-    .atlas-home{padding:104px 0 52px;min-height:100vh;background:radial-gradient(circle at 20% 0%,rgba(255,248,226,.36),transparent 28%)}
-    .atlas-home-copy{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;margin-bottom:22px}
-    .atlas-home-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(46px,6vw,82px);font-weight:500;line-height:.92;letter-spacing:-.04em;margin:10px 0 0;color:var(--ink)}
-    .atlas-home-copy p{font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.55;color:var(--ink-soft);margin:0}
-    .atlas-canvas{width:min(1540px,calc(100vw - 28px));margin:0 auto;border:1px solid rgba(78,55,34,.42);box-shadow:0 30px 90px rgba(65,43,26,.22);background:#e5cea1;overflow:hidden}
-    .atlas-object{display:block;width:100%;aspect-ratio:16/10;border:0;background:#e5cea1}
-    .atlas-hint{text-align:center;margin:14px 0 0;font:700 10px 'DM Mono';letter-spacing:.14em;text-transform:uppercase;color:#7c2f35}
+    .atlas-home{padding:104px 0 52px;min-height:100vh;background:#f1eee7}
+    .atlas-home-copy{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:end;margin-bottom:28px}
+    .atlas-home-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,6vw,84px);font-weight:500;line-height:.95;letter-spacing:-.045em;margin:10px 0 0;color:#2f2b26}
+    .atlas-home-copy p{font-family:Manrope,system-ui,sans-serif;font-size:17px;line-height:1.7;color:#665f55;margin:0;max-width:620px}
+    .atlas-canvas{width:min(1540px,calc(100vw - 28px));margin:0 auto;border:1px solid rgba(86,77,66,.3);box-shadow:0 22px 60px rgba(60,51,42,.12);background:#ece7dd;overflow:hidden}
+    .atlas-object{display:block;width:100%;aspect-ratio:1600/920;border:0;background:#ece7dd}
+    .atlas-hint{text-align:center;margin:14px 0 0;font:700 10px 'DM Mono';letter-spacing:.12em;text-transform:uppercase;color:#7b4b3b}
     #current{scroll-margin-top:86px}.lore-section{scroll-margin-top:86px}
     .quest-strip{padding-top:62px}
     .return-to-atlas{opacity:1;pointer-events:auto;transform:none}
-    @media(max-width:900px){.atlas-home-copy{grid-template-columns:1fr;gap:18px}.atlas-home-copy p{font-size:18px}.atlas-canvas{overflow-x:auto}.atlas-object{width:1100px;max-width:none;height:688px}.atlas-home{padding-top:92px}}
-    @media(max-width:620px){.atlas-home-copy h1{font-size:48px}.atlas-home-copy{width:min(100% - 28px,1180px)}.atlas-canvas{width:100%;border-left:0;border-right:0}.atlas-object{width:980px;height:613px}.atlas-hint{padding:0 16px}.nav-links a:nth-child(2){display:none}}
+    @media(max-width:900px){.atlas-home-copy{grid-template-columns:1fr;gap:18px}.atlas-home-copy p{font-size:16px}.atlas-canvas{overflow-x:auto}.atlas-object{width:1120px;max-width:none;height:644px}.atlas-home{padding-top:92px}}
+    @media(max-width:620px){.atlas-home-copy h1{font-size:50px}.atlas-home-copy{width:min(100% - 28px,1180px)}.atlas-canvas{width:100%;border-left:0;border-right:0}.atlas-object{width:1040px;height:598px}.atlas-hint{padding:0 16px}.nav-links a:nth-child(2){display:none}}
   </style>
 </head>
 <body>
   <div id="cursor-glow" aria-hidden="true"></div>
-  <header class="nav-wrap atlas-nav"><nav class="nav container"><a class="brand" href="#atlas"><img class="brand-avatar" src="https://github.com/showman-sharma.png" alt="Anirudh Sharma" width="38" height="38" /><span>Anirudh Sharma</span></a><div class="nav-links"><a href="#atlas">Atlas</a><a href="#current">Now</a><a href="#contact">Contact</a></div></nav></header>
+  <header class="nav-wrap atlas-nav"><nav class="nav container"><a class="brand" href="#atlas"><img class="brand-avatar" src="https://github.com/showman-sharma.png" alt="Anirudh Sharma" width="38" height="38" /><span>Anirudh Sharma</span></a><div class="nav-links"><a href="#atlas">Map</a><a href="#current">Now</a><a href="#contact">Contact</a></div></nav></header>
 
   <main id="top">
     <section id="atlas" class="atlas-home reveal" aria-labelledby="atlas-title-text">
       <div class="atlas-home-copy container">
-        <div><span class="chapter-label">A PERSONAL ATLAS · HYDERABAD</span><h1 id="atlas-title-text">A life in several directions.</h1></div>
-        <p>Explore the map. The landmarks are parts of me — engineering, research, learning, writing, making, performance — but none of them gets to become the whole person.</p>
+        <div><span class="chapter-label">ANIRUDH SHARMA · PERSONAL MAP</span><h1 id="atlas-title-text">A map of pursuits.</h1></div>
+        <p>Engineering, research, learning, writing, making, performance, people. They overlap, pull on one another, and change over time. The map is a way into those parts of me — not a claim that any one of them explains the whole person.</p>
       </div>
       <div class="atlas-canvas" aria-label="Interactive map of Anirudh Sharma's pursuits">
-        <object class="atlas-object" type="image/svg+xml" data="atlas.svg" aria-label="The Atlas of Anirudh Sharma"></object>
+        <object class="atlas-object" type="image/svg+xml" data="atlas.svg" aria-label="A map of Anirudh Sharma's pursuits"></object>
       </div>
-      <p class="atlas-hint">Click a place on the map to travel there ↓</p>
+      <p class="atlas-hint">Select a region or label to open that part of the site</p>
     </section>
 
     <section id="current" class="container quest-strip reveal"><div class="quest-card"><span>CURRENTLY GOING DEEP ON</span><p id="current-focus">Reliable agentic AI systems</p></div><div><div class="quest-card"><span>QUESTION I KEEP POKING</span><p id="current-question">How do we evaluate and diagnose tool-using agents under real failure modes?</p></div><div class="quest-card"><span>LATEST MILESTONE</span><p id="current-milestone">First research paper published on IEEE Xplore — IEEE ICDH 2026</p></div><span id="state-updated" class="state-updated"></span></div></section>
@@ -65,8 +65,8 @@
 
     <section id="contact" class="lore-section container contact reveal"><span class="chapter-label">CONTACT</span><h2>Good problem?<br>Interesting person?</h2><p>If you want to talk engineering, research, agents, writing, open source, startup ideas, cinema, or something unexpectedly adjacent — say hello.</p><div class="contact-links"><a href="mailto:vanirudhsharma@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/ml-engineer-v-s-s-anirudh-sharma/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/showman-sharma" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://x.com/showman_sharma" target="_blank" rel="noreferrer">X ↗</a><a href="https://www.instagram.com/showman_sharma/" target="_blank" rel="noreferrer">Instagram ↗</a></div></section>
   </main>
-  <a class="return-to-atlas" href="#atlas">↑ Atlas</a>
-  <footer class="container footer"><span>© <span id="year"></span> Anirudh Sharma</span><span>An atlas, not a final definition.</span></footer>
+  <a class="return-to-atlas" href="#atlas">↑ Map</a>
+  <footer class="container footer"><span>© <span id="year"></span> Anirudh Sharma</span><span>A map, not a final definition.</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
