@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">The Atlas of Anirudh Sharma</title>
+  <desc id="desc">A hand-drawn parchment atlas with clickable regions for Engineering, Research, Learning, Writing, Making, Stage and About.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead6ad"/><stop offset=".45" stop-color="#e5cea1"/><stop offset="1" stop-color="#d7bb83"/></linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d6c08c"/><stop offset="1" stop-color="#c7ab73"/></linearGradient>
+    <pattern id="waves" width="34" height="18" patternUnits="userSpaceOnUse"><path d="M0 9 Q8 1 17 9 T34 9" fill="none" stroke="#617a7b" stroke-width="1" opacity=".22"/></pattern>
+    <pattern id="grain" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".5" fill="#6f5238" opacity=".18"/><circle cx="7" cy="8" r=".4" fill="#6f5238" opacity=".12"/></pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#4c3421" flood-opacity=".2"/></filter>
+    <symbol id="tree" viewBox="0 0 24 32"><path d="M12 2 L20 16 H15 L22 24 H2 L9 16 H4 Z" fill="#526b49" stroke="#3d5039" stroke-width="1.3"/><path d="M12 23 V31" stroke="#5e452f" stroke-width="2"/></symbol>
+    <symbol id="pine" viewBox="0 0 20 34"><path d="M10 2 L18 15 H14 L19 24 H1 L6 15 H2 Z" fill="#486047" stroke="#344735" stroke-width="1.2"/><path d="M10 23 V33" stroke="#654934" stroke-width="2"/></symbol>
+    <symbol id="mountain" viewBox="0 0 60 52"><path d="M3 48 L26 8 L53 48 Z" fill="#b7a27f" stroke="#6f5b44" stroke-width="2"/><path d="M26 8 L18 24 L26 20 L33 27" fill="none" stroke="#eee1bf" stroke-width="3"/><path d="M3 48 H53" stroke="#6f5b44" stroke-width="2"/></symbol>
+    <symbol id="tower" viewBox="0 0 36 72"><path d="M8 67 V26 H28 V67 Z" fill="#b38b5e" stroke="#5d442f" stroke-width="2"/><path d="M5 26 H31 L18 4 Z" fill="#7c3e34" stroke="#5d442f" stroke-width="2"/><rect x="14" y="38" width="8" height="12" fill="#e6d0a0" stroke="#5d442f"/><path d="M4 67 H32" stroke="#5d442f" stroke-width="3"/></symbol>
+    <symbol id="house" viewBox="0 0 60 50"><path d="M8 45 V20 H52 V45 Z" fill="#c09b69" stroke="#5d442f" stroke-width="2"/><path d="M3 21 L30 5 L57 21 Z" fill="#8e4a3b" stroke="#5d442f" stroke-width="2"/><rect x="26" y="31" width="8" height="14" fill="#654934"/></symbol>
+    <symbol id="spire" viewBox="0 0 50 100"><path d="M12 94 V35 H38 V94 Z" fill="#af8b63" stroke="#5b4431" stroke-width="2"/><path d="M8 36 H42 L25 4 Z" fill="#70483c" stroke="#5b4431" stroke-width="2"/><path d="M25 4 V0" stroke="#5b4431" stroke-width="2"/><rect x="21" y="52" width="8" height="16" fill="#ead7a8" stroke="#5b4431"/></symbol>
+    <symbol id="colosseum" viewBox="0 0 100 62"><ellipse cx="50" cy="18" rx="43" ry="14" fill="#b89668" stroke="#5d442f" stroke-width="2"/><path d="M7 18 V46 Q50 62 93 46 V18" fill="#b89668" stroke="#5d442f" stroke-width="2"/><g fill="#6f5137"><rect x="18" y="28" width="8" height="14" rx="4"/><rect x="32" y="30" width="8" height="14" rx="4"/><rect x="46" y="31" width="8" height="14" rx="4"/><rect x="60" y="30" width="8" height="14" rx="4"/><rect x="74" y="28" width="8" height="14" rx="4"/></g></symbol>
+    <style>
+      .frame{fill:none;stroke:#6d5136;stroke-width:2}.frame2{fill:none;stroke:#6d5136;stroke-width:1;stroke-dasharray:7 6;opacity:.55}.coast{fill:url(#land);stroke:#6f5438;stroke-width:3;filter:url(#soft)}
+      .shore{fill:none;stroke:#f0dfb6;stroke-width:10;opacity:.45}.river{fill:none;stroke:#587886;stroke-width:7;stroke-linecap:round;opacity:.75}.road{fill:none;stroke:#8f744f;stroke-width:3;stroke-dasharray:8 7;stroke-linecap:round;opacity:.8}
+      .region{cursor:pointer}.region:hover .region-glow{opacity:.22}.region:hover .region-name{text-decoration:underline}.region-glow{opacity:0;transition:opacity .18s}.region-name{font-family:Georgia,'Times New Roman',serif;font-size:31px;letter-spacing:.06em;fill:#2f241c;font-weight:700}.region-sub{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:17px;fill:#5f4f42}.small{font-family:Georgia,'Times New Roman',serif;font-size:15px;fill:#5d4b3e}.micro{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.15em;fill:#6a5543}.title{font-family:Georgia,'Times New Roman',serif;font-size:52px;letter-spacing:.03em;fill:#2e2119}.subtitle{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-style:italic;fill:#5f4d3f}.quote{font-family:Georgia,'Times New Roman',serif;font-size:18px;font-style:italic;fill:#4d4035}.capital-title{font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:700;fill:#2d221a}.capital-sub{font-family:Georgia,'Times New Roman',serif;font-size:15px;font-style:italic;fill:#5c493b}.legend{font-family:Georgia,'Times New Roman',serif;font-size:15px;fill:#4f4034}.hotspot{fill:transparent;stroke:transparent}.ornament{stroke:#72573d;fill:none;stroke-width:2;opacity:.7}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#paper)"/>
+  <rect width="1600" height="1000" fill="url(#waves)" opacity=".8"/>
+  <rect width="1600" height="1000" fill="url(#grain)" opacity=".65"/>
+  <path class="frame" d="M24 24H1576V976H24Z"/><path class="frame2" d="M40 40H1560V960H40Z"/>
+
+  <text class="title" x="72" y="78">ANIRUDH SHARMA</text>
+  <text class="micro" x="76" y="106">A MIND IN MANY DIRECTIONS</text>
+  <text class="quote" x="76" y="140">“Building, learning, writing, creating — and exploring the edges of what’s possible.”</text>
+
+  <!-- One connected world -->
+  <path class="shore" d="M275 190 C355 118 470 105 575 132 C650 90 790 91 881 132 C986 101 1131 139 1219 219 C1314 303 1341 449 1292 570 C1261 649 1169 713 1072 723 C1012 821 899 857 791 827 C690 874 566 841 506 764 C411 774 327 719 300 640 C210 596 174 492 205 404 C160 330 192 243 275 190Z"/>
+  <path class="coast" d="M275 190 C355 118 470 105 575 132 C650 90 790 91 881 132 C986 101 1131 139 1219 219 C1314 303 1341 449 1292 570 C1261 649 1169 713 1072 723 C1012 821 899 857 791 827 C690 874 566 841 506 764 C411 774 327 719 300 640 C210 596 174 492 205 404 C160 330 192 243 275 190Z"/>
+
+  <!-- regional washes -->
+  <path fill="#c8b07d" opacity=".35" d="M233 383 C226 278 304 190 438 165 C526 149 585 194 598 286 C606 372 541 446 433 464 C333 478 253 454 233 383Z"/>
+  <path fill="#c9b688" opacity=".38" d="M571 170 C655 104 810 113 904 156 C954 188 963 255 924 320 C875 394 743 424 650 384 C570 350 530 238 571 170Z"/>
+  <path fill="#9cab7f" opacity=".26" d="M916 250 C1014 194 1185 226 1242 310 C1292 384 1262 501 1182 556 C1104 607 976 600 908 540 C851 489 845 320 916 250Z"/>
+  <path fill="#d1ae70" opacity=".26" d="M227 447 C291 407 418 412 496 470 C544 509 544 590 485 648 C428 705 316 699 254 641 C190 581 180 485 227 447Z"/>
+  <path fill="#dbc78e" opacity=".24" d="M500 600 C579 538 717 548 801 602 C866 645 871 741 807 794 C743 849 602 833 531 771 C472 720 456 638 500 600Z"/>
+  <path fill="#a7af86" opacity=".27" d="M824 503 C905 448 1055 465 1143 528 C1225 589 1206 688 1120 735 C1032 786 913 766 847 697 C803 651 786 553 824 503Z"/>
+
+  <!-- Rivers -->
+  <path class="river" d="M765 151 C742 226 770 289 717 342 C679 380 630 392 612 445 C594 499 635 536 603 590 C577 633 540 651 528 714"/>
+  <path class="river" d="M1003 214 C961 265 942 321 948 382 C954 439 1004 469 1000 527 C996 577 963 611 955 666"/>
+
+  <!-- Roads -->
+  <path class="road" d="M735 505 C623 449 514 397 430 331"/>
+  <path class="road" d="M752 494 C791 410 833 323 862 243"/>
+  <path class="road" d="M754 522 C836 510 921 487 1020 435"/>
+  <path class="road" d="M720 537 C627 599 566 670 551 729"/>
+  <path class="road" d="M772 531 C850 609 906 656 994 675"/>
+
+  <!-- mountains / academy -->
+  <g opacity=".95">
+    <use href="#mountain" x="310" y="165" width="78" height="67"/><use href="#mountain" x="365" y="132" width="96" height="84"/><use href="#mountain" x="432" y="155" width="82" height="71"/><use href="#mountain" x="498" y="178" width="70" height="61"/>
+    <use href="#mountain" x="783" y="143" width="70" height="61"/><use href="#mountain" x="835" y="125" width="85" height="74"/><use href="#mountain" x="885" y="162" width="68" height="60"/>
+    <use href="#mountain" x="1090" y="300" width="72" height="62"/><use href="#mountain" x="1137" y="334" width="66" height="57"/>
+    <use href="#mountain" x="338" y="584" width="70" height="61"/><use href="#mountain" x="390" y="618" width="66" height="57"/>
+  </g>
+
+  <!-- forests -->
+  <g opacity=".9">
+    <use href="#tree" x="1020" y="299" width="24" height="32"/><use href="#tree" x="1052" y="316" width="28" height="37"/><use href="#tree" x="1084" y="289" width="24" height="32"/><use href="#tree" x="1118" y="323" width="28" height="37"/><use href="#tree" x="1150" y="302" width="25" height="34"/><use href="#tree" x="1180" y="345" width="26" height="35"/>
+    <use href="#pine" x="972" y="355" width="22" height="38"/><use href="#pine" x="1000" y="380" width="21" height="36"/><use href="#pine" x="1133" y="386" width="21" height="36"/><use href="#pine" x="1170" y="406" width="22" height="38"/>
+    <use href="#tree" x="860" y="650" width="25" height="34"/><use href="#tree" x="890" y="632" width="27" height="36"/><use href="#tree" x="918" y="675" width="25" height="34"/><use href="#tree" x="1040" y="626" width="26" height="35"/><use href="#tree" x="1074" y="649" width="28" height="37"/>
+    <use href="#tree" x="520" y="265" width="21" height="29"/><use href="#tree" x="547" y="285" width="22" height="30"/><use href="#tree" x="571" y="252" width="23" height="31"/>
+  </g>
+
+  <!-- Engineering city -->
+  <g transform="translate(327 325)">
+    <use href="#tower" x="0" y="-74" width="38" height="76"/><use href="#tower" x="47" y="-84" width="42" height="84"/><use href="#tower" x="99" y="-67" width="34" height="68"/><use href="#house" x="18" y="-30" width="62" height="52"/><use href="#house" x="76" y="-28" width="56" height="48"/>
+  </g>
+
+  <!-- Research cathedral / archive -->
+  <g transform="translate(790 257)">
+    <use href="#spire" x="0" y="-102" width="49" height="98"/><use href="#spire" x="53" y="-118" width="58" height="116"/><use href="#spire" x="115" y="-102" width="49" height="98"/><use href="#house" x="28" y="-38" width="96" height="80"/>
+  </g>
+
+  <!-- Writing grove -->
+  <g transform="translate(1000 423)">
+    <use href="#tower" x="0" y="-72" width="34" height="68"/><use href="#house" x="37" y="-39" width="68" height="57"/><use href="#house" x="92" y="-31" width="54" height="45"/>
+    <use href="#tree" x="-24" y="-10" width="26" height="35"/><use href="#tree" x="139" y="-20" width="26" height="35"/><use href="#tree" x="155" y="10" width="22" height="30"/>
+  </g>
+
+  <!-- Makers coast -->
+  <g transform="translate(550 723)">
+    <use href="#house" x="0" y="-50" width="67" height="56"/><use href="#house" x="66" y="-44" width="55" height="46"/><use href="#tower" x="124" y="-64" width="34" height="68"/>
+    <path d="M177 -60 V8" stroke="#674b33" stroke-width="4"/><path d="M177 -60 C201 -49 204 -29 177 -20Z" fill="#e6d2a2" stroke="#674b33" stroke-width="2"/><circle cx="177" cy="-66" r="7" fill="#8f4a3d"/>
+  </g>
+
+  <!-- Stage -->
+  <g transform="translate(980 680)"><use href="#colosseum" x="0" y="-66" width="120" height="74"/></g>
+
+  <!-- central citadel -->
+  <g transform="translate(685 520)" filter="url(#soft)">
+    <circle cx="60" cy="0" r="82" fill="#c9a96f" stroke="#6b4d32" stroke-width="3"/>
+    <use href="#tower" x="16" y="-80" width="38" height="76"/><use href="#tower" x="66" y="-92" width="44" height="88"/><use href="#house" x="17" y="-28" width="95" height="79"/>
+    <circle cx="60" cy="55" r="9" fill="#a83f32" stroke="#f0dfb7" stroke-width="3"/>
+  </g>
+
+  <!-- Labels and links -->
+  <a href="#education" target="_top" class="region"><title>Learning and education</title><path class="region-glow" fill="#fff" d="M250 145H600V330H250Z"/><text class="region-name" x="425" y="270" text-anchor="middle">THE ACADEMY</text><text class="region-sub" x="425" y="295" text-anchor="middle">Education · learning · foundations</text><rect class="hotspot" x="250" y="145" width="350" height="185"/></a>
+  <a href="#engineering" target="_top" class="region"><title>Engineering</title><path class="region-glow" fill="#fff" d="M205 300H540V535H205Z"/><text class="region-name" x="365" y="465" text-anchor="middle">ENGINEERING</text><text class="region-sub" x="365" y="490" text-anchor="middle">Systems · products · real-world impact</text><rect class="hotspot" x="205" y="300" width="335" height="235"/></a>
+  <a href="#research" target="_top" class="region"><title>Research</title><path class="region-glow" fill="#fff" d="M610 120H960V390H610Z"/><text class="region-name" x="790" y="318" text-anchor="middle">RESEARCH</text><text class="region-sub" x="790" y="343" text-anchor="middle">Papers · experiments · big questions</text><rect class="hotspot" x="610" y="120" width="350" height="270"/></a>
+  <a href="#writing" target="_top" class="region"><title>Writing</title><path class="region-glow" fill="#fff" d="M920 250H1270V570H920Z"/><text class="region-name" x="1090" y="475" text-anchor="middle">WRITING</text><text class="region-sub" x="1090" y="500" text-anchor="middle">Essays · notes · ideas · reflection</text><rect class="hotspot" x="920" y="250" width="350" height="320"/></a>
+  <a href="#making" target="_top" class="region"><title>Making</title><path class="region-glow" fill="#fff" d="M470 570H820V825H470Z"/><text class="region-name" x="645" y="790" text-anchor="middle">MAKING</text><text class="region-sub" x="645" y="815" text-anchor="middle">Art · side projects · play</text><rect class="hotspot" x="470" y="570" width="350" height="255"/></a>
+  <a href="#about" target="_top" class="region"><title>About Anirudh</title><circle class="region-glow" fill="#fff" cx="745" cy="520" r="105"/><text class="capital-title" x="745" y="574" text-anchor="middle">ANIRUDH</text><text class="capital-sub" x="745" y="597" text-anchor="middle">A work in progress</text><text class="micro" x="745" y="620" text-anchor="middle">YOU ARE HERE</text><circle class="hotspot" cx="745" cy="520" r="105"/></a>
+  <a href="#making" target="_top" class="region"><title>Stage and community</title><text class="region-name" x="1040" y="735" text-anchor="middle">THE STAGE</text><text class="region-sub" x="1040" y="760" text-anchor="middle">Speaking · comedy · community</text><rect class="hotspot" x="880" y="585" width="320" height="190"/></a>
+
+  <!-- unexplored / future -->
+  <text class="region-name" x="1110" y="198" text-anchor="middle" opacity=".72">THE UNEXPLORED</text><text class="region-sub" x="1110" y="225" text-anchor="middle" opacity=".7">The next chapter</text>
+  <path d="M1212 172 C1270 160 1342 174 1388 214 C1418 241 1431 281 1422 316" class="ornament" stroke-dasharray="7 8"/>
+
+  <!-- side notes -->
+  <text class="quote" x="1280" y="90">Different pursuits.</text><text class="quote" x="1304" y="116">One journey.</text>
+  <text class="quote" x="124" y="350">To useful things →</text><text class="quote" x="132" y="610">To deeper understanding →</text><text class="quote" x="1300" y="430">← To clearer thoughts</text>
+
+  <!-- compass -->
+  <g transform="translate(110 835)">
+    <circle cx="0" cy="0" r="62" class="ornament"/><circle cx="0" cy="0" r="43" class="ornament"/>
+    <path d="M0 -58 L12 -8 L0 0 L-12 -8 Z M0 58 L8 9 L0 0 L-8 9 Z M-58 0 L-9 -8 L0 0 L-9 8 Z M58 0 L9 -8 L0 0 L9 8 Z" fill="#725237" stroke="#eee0b9" stroke-width="1"/>
+    <text class="micro" x="0" y="-72" text-anchor="middle">N</text><text class="micro" x="0" y="82" text-anchor="middle">S</text><text class="micro" x="-76" y="4" text-anchor="middle">W</text><text class="micro" x="76" y="4" text-anchor="middle">E</text>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(1288 590)">
+    <rect x="0" y="0" width="250" height="260" fill="#ead5a7" stroke="#72563a" stroke-width="2" opacity=".95"/>
+    <text class="region-name" x="125" y="40" text-anchor="middle" style="font-size:23px">MAP LEGEND</text>
+    <text class="legend" x="24" y="78">🏰  Region / pursuit</text><text class="legend" x="24" y="108">▲  Challenge / learning</text><text class="legend" x="24" y="138">♣  Exploration / curiosity</text><text class="legend" x="24" y="168">≈  Connection / flow</text><text class="legend" x="24" y="198">- -  Road / continuity</text><text class="legend" x="24" y="228">●  You are here</text>
+  </g>
+
+  <!-- ship -->
+  <g transform="translate(245 825) rotate(-8)"><path d="M-52 22 Q0 42 52 22 L40 40 Q0 57 -40 40 Z" fill="#9d7148" stroke="#5d442f" stroke-width="3"/><path d="M0 20 V-70" stroke="#5d442f" stroke-width="4"/><path d="M0 -65 C37 -51 47 -19 0 -18Z" fill="#ead8aa" stroke="#5d442f" stroke-width="2"/><path d="M-4 -53 C-37 -42 -42 -20 -4 -19Z" fill="#dec797" stroke="#5d442f" stroke-width="2"/></g>
+
+  <text class="micro" x="800" y="950" text-anchor="middle">SAME SKY · DIFFERENT HORIZONS</text>
+</svg>
