@@ -14,6 +14,22 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="enterprise.css" />
   <link rel="stylesheet" href="lore.css" />
+  <style>
+    .atlas-nav{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(232,211,169,.92);backdrop-filter:blur(10px);box-shadow:0 1px rgba(85,59,35,.18)}
+    .atlas-nav .brand-avatar{width:38px;height:38px;object-fit:cover;border-radius:50%}
+    .atlas-home{padding:104px 0 52px;min-height:100vh;background:radial-gradient(circle at 20% 0%,rgba(255,248,226,.36),transparent 28%)}
+    .atlas-home-copy{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;margin-bottom:22px}
+    .atlas-home-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(46px,6vw,82px);font-weight:500;line-height:.92;letter-spacing:-.04em;margin:10px 0 0;color:var(--ink)}
+    .atlas-home-copy p{font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.55;color:var(--ink-soft);margin:0}
+    .atlas-canvas{width:min(1540px,calc(100vw - 28px));margin:0 auto;border:1px solid rgba(78,55,34,.42);box-shadow:0 30px 90px rgba(65,43,26,.22);background:#e5cea1;overflow:hidden}
+    .atlas-object{display:block;width:100%;aspect-ratio:16/10;border:0;background:#e5cea1}
+    .atlas-hint{text-align:center;margin:14px 0 0;font:700 10px 'DM Mono';letter-spacing:.14em;text-transform:uppercase;color:#7c2f35}
+    #current{scroll-margin-top:86px}.lore-section{scroll-margin-top:86px}
+    .quest-strip{padding-top:62px}
+    .return-to-atlas{opacity:1;pointer-events:auto;transform:none}
+    @media(max-width:900px){.atlas-home-copy{grid-template-columns:1fr;gap:18px}.atlas-home-copy p{font-size:18px}.atlas-canvas{overflow-x:auto}.atlas-object{width:1100px;max-width:none;height:688px}.atlas-home{padding-top:92px}}
+    @media(max-width:620px){.atlas-home-copy h1{font-size:48px}.atlas-home-copy{width:min(100% - 28px,1180px)}.atlas-canvas{width:100%;border-left:0;border-right:0}.atlas-object{width:980px;height:613px}.atlas-hint{padding:0 16px}.nav-links a:nth-child(2){display:none}}
+  </style>
 </head>
 <body>
   <div id="cursor-glow" aria-hidden="true"></div>
