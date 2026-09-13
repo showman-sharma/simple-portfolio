@@ -3,70 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Atlas of Anirudh Sharma — a personal map of engineering, research, learning, writing, making and the person connecting them." />
-  <meta name="theme-color" content="#e5cea1" />
-  <title>The Atlas of Anirudh Sharma</title>
+  <meta name="description" content="Anirudh Sharma — a personal book of engineering, research, learning, writing, making, performance and the person connecting them." />
+  <meta name="theme-color" content="#efe8dc" />
+  <title>Anirudh Sharma — A Book in Progress</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="enterprise.css" />
   <link rel="stylesheet" href="lore.css" />
-  <style>
-    .atlas-nav{position:fixed;left:0;right:0;top:0;z-index:40;background:rgba(241,238,231,.94);backdrop-filter:blur(12px);box-shadow:0 1px rgba(73,65,55,.14)}
-    .atlas-nav .brand-avatar{width:38px;height:38px;object-fit:cover;border-radius:50%}
-    .atlas-home{padding:104px 0 52px;min-height:100vh;background:#f1eee7}
-    .atlas-home-copy{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:end;margin-bottom:28px}
-    .atlas-home-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,6vw,84px);font-weight:500;line-height:.95;letter-spacing:-.045em;margin:10px 0 0;color:#2f2b26}
-    .atlas-home-copy p{font-family:Manrope,system-ui,sans-serif;font-size:17px;line-height:1.7;color:#665f55;margin:0;max-width:620px}
-    .atlas-canvas{width:min(1540px,calc(100vw - 28px));margin:0 auto;border:1px solid rgba(86,77,66,.3);box-shadow:0 22px 60px rgba(60,51,42,.12);background:#ece7dd;overflow:hidden}
-    .atlas-object{display:block;width:100%;aspect-ratio:1600/920;border:0;background:#ece7dd}
-    .atlas-hint{text-align:center;margin:14px 0 0;font:700 10px 'DM Mono';letter-spacing:.12em;text-transform:uppercase;color:#7b4b3b}
-    #current{scroll-margin-top:86px}.lore-section{scroll-margin-top:86px}
-    .quest-strip{padding-top:62px}
-    .return-to-atlas{opacity:1;pointer-events:auto;transform:none}
-    @media(max-width:900px){.atlas-home-copy{grid-template-columns:1fr;gap:18px}.atlas-home-copy p{font-size:16px}.atlas-canvas{overflow-x:auto}.atlas-object{width:1120px;max-width:none;height:644px}.atlas-home{padding-top:92px}}
-    @media(max-width:620px){.atlas-home-copy h1{font-size:50px}.atlas-home-copy{width:min(100% - 28px,1180px)}.atlas-canvas{width:100%;border-left:0;border-right:0}.atlas-object{width:1040px;height:598px}.atlas-hint{padding:0 16px}.nav-links a:nth-child(2){display:none}}
-  </style>
 </head>
 <body>
-  <div id="cursor-glow" aria-hidden="true"></div>
-  <header class="nav-wrap atlas-nav"><nav class="nav container"><a class="brand" href="#atlas"><img class="brand-avatar" src="https://github.com/showman-sharma.png" alt="Anirudh Sharma" width="38" height="38" /><span>Anirudh Sharma</span></a><div class="nav-links"><a href="#atlas">Map</a><a href="#current">Now</a><a href="#contact">Contact</a></div></nav></header>
+  <header class="book-nav">
+    <a class="book-brand" href="#cover" aria-label="Back to cover">
+      <img src="https://github.com/showman-sharma.png" alt="Anirudh Sharma" width="36" height="36" />
+      <span>Anirudh Sharma</span>
+    </a>
+    <nav aria-label="Book navigation">
+      <a href="#contents">Contents</a>
+      <a href="#current">Now</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to night mode" title="Switch theme"><span aria-hidden="true">☾</span></button>
+    </nav>
+  </header>
 
-  <main id="top">
-    <section id="atlas" class="atlas-home reveal" aria-labelledby="atlas-title-text">
-      <div class="atlas-home-copy container">
-        <div><span class="chapter-label">ANIRUDH SHARMA · PERSONAL MAP</span><h1 id="atlas-title-text">A map of pursuits.</h1></div>
-        <p>Engineering, research, learning, writing, making, performance, people. They overlap, pull on one another, and change over time. The map is a way into those parts of me — not a claim that any one of them explains the whole person.</p>
+  <main class="book-shell">
+    <section id="cover" class="book-page cover-page reveal" data-chapter="cover">
+      <div class="cover-spread">
+        <div class="cover-main">
+          <div class="folio-label">VOLUME I · ONGOING</div>
+          <h1>Anirudh<br>Sharma</h1>
+          <p class="cover-deck">Engineer, researcher, writer, maker — and several other things depending on the week.</p>
+          <div class="cover-note">A book about a person. The work is part of the story, not the title of it.</div>
+        </div>
+        <aside class="cover-colophon">
+          <span class="small-caps">THIS EDITION</span>
+          <p>Hyderabad · 2026</p>
+          <p>Engineering, research, learning, writing, making, stage, community.</p>
+          <a class="book-cta" href="#contents" data-chapter-link>Open the book →</a>
+        </aside>
       </div>
-      <div class="atlas-canvas" aria-label="Interactive map of Anirudh Sharma's pursuits">
-        <object class="atlas-object" type="image/svg+xml" data="atlas.svg" aria-label="A map of Anirudh Sharma's pursuits"></object>
-      </div>
-      <p class="atlas-hint">Select a region or label to open that part of the site</p>
+      <div class="page-folio"><span>ANIRUDH SHARMA</span><span>i</span></div>
     </section>
 
-    <section id="current" class="container quest-strip reveal"><div class="quest-card"><span>CURRENTLY GOING DEEP ON</span><p id="current-focus">Reliable agentic AI systems</p></div><div><div class="quest-card"><span>QUESTION I KEEP POKING</span><p id="current-question">How do we evaluate and diagnose tool-using agents under real failure modes?</p></div><div class="quest-card"><span>LATEST MILESTONE</span><p id="current-milestone">First research paper published on IEEE Xplore — IEEE ICDH 2026</p></div><span id="state-updated" class="state-updated"></span></div></section>
+    <section id="contents" class="book-page contents-page reveal" data-chapter="contents">
+      <div class="chapter-opener compact-opener">
+        <span class="chapter-number">CONTENTS</span>
+        <h2>The chapters so far.</h2>
+        <p>Not a hierarchy. Not a final definition. Just the parts of life that have accumulated enough weight to deserve their own pages.</p>
+      </div>
+      <div class="toc-list">
+        <a href="#engineering" data-chapter-link><span class="toc-no">01</span><span><strong>Engineering</strong><small>Product systems · architecture · selected work</small></span><em>12</em></a>
+        <a href="#research" data-chapter-link><span class="toc-no">02</span><span><strong>Research</strong><small>Papers · experiments · questions</small></span><em>28</em></a>
+        <a href="#education" data-chapter-link><span class="toc-no">03</span><span><strong>Learning</strong><small>IITM · IIITB · LJMU · beyond</small></span><em>38</em></a>
+        <a href="#writing" data-chapter-link><span class="toc-no">04</span><span><strong>Writing</strong><small>Essays · notes · explanations</small></span><em>46</em></a>
+        <a href="#making" data-chapter-link><span class="toc-no">05</span><span><strong>Making</strong><small>Drawing · cinema · side projects</small></span><em>54</em></a>
+        <a href="#stage" data-chapter-link><span class="toc-no">06</span><span><strong>Stage &amp; People</strong><small>Speaking · performance · community</small></span><em>62</em></a>
+        <a href="#about" data-chapter-link><span class="toc-no">07</span><span><strong>Anirudh</strong><small>The person between all of it</small></span><em>70</em></a>
+      </div>
+      <div class="page-folio"><span>TABLE OF CONTENTS</span><span>1</span></div>
+    </section>
 
-    <section id="engineering" class="lore-section container"><div class="chapter-heading reveal"><div><span class="chapter-label">ENGINEERING</span><h2>Build the thing.<br>Then build the system around it.</h2></div><div class="marginalia">My strongest professional thread is AI/ML product engineering: turning model ideas into capabilities that fit enterprise products, then making the surrounding patterns reusable for other engineers.</div></div><div class="enterprise-grid reveal"><article class="enterprise-card"><span class="enterprise-meta">ML product engineering · anomaly detection</span><h3>From model logic to product behavior</h3><p>Built and evolved anomaly-detection capabilities inside enterprise billing workflows, spanning data preparation, model behavior, explainability, backend integration, performance investigation and stabilization after QA handoff.</p><span class="proof-line">Model engineering · SQL/data flows · performance analysis · release support</span></article><article class="enterprise-card"><span class="enterprise-meta">Predictive systems · product integration</span><h3>ML that participates in a real product</h3><p>Worked on predictive capabilities where training was only one layer: configuration, backend services, business behavior, model validation, governance documentation, environment support and product integration all mattered.</p><span class="proof-line">Predictive ML · backend integration · explainability/governance · issue triage</span></article><article class="enterprise-card"><span class="enterprise-meta">Reusable platforms · self-initiated</span><h3>Stop rebuilding the same plumbing</h3><p>Initiated and architected reusable ML foundations for data preparation, training, inference and configuration so multiple use cases and engineers could build on common patterns instead of bespoke pipelines.</p><span class="proof-line">Platform architecture · reuse · developer enablement · adoption</span></article><article class="enterprise-card"><span class="enterprise-meta">Technical leadership</span><h3>Design it, integrate it, get it release-ready</h3><p>Independently delivered AI capabilities across requirements, SQL/backend work, ML logic, application integration, engineering validation, deployment support, QA handoff and release readiness — while increasingly guiding freshers and interns.</p><span class="proof-line">Cross-stack ownership · technical direction · delivery through others</span></article></div><div class="enterprise-note reveal"><span>PUBLIC-SAFE BY DESIGN</span><p>The work lives inside a large enterprise product, so these are deliberately sanitized case studies. No customer data, proprietary code, confidential architecture or internal screenshots are shown here.</p></div><div class="chapter-heading reveal" style="margin-top:88px"><div><span class="chapter-label">SELECTED PUBLIC WORK</span><h2>Things you can actually inspect.</h2></div><p>Public projects are here as evidence, not as a museum of every repository I have ever touched.</p></div><div class="filter-bar reveal" id="filters"><button class="filter active" data-filter="all">Everything</button><button class="filter" data-filter="research">Research</button><button class="filter" data-filter="systems">AI systems</button><button class="filter" data-filter="ml">ML</button><button class="filter" data-filter="community">Open source</button></div><div id="project-grid" class="project-grid"></div></section>
+    <section id="current" class="book-page now-page reveal" data-chapter="current">
+      <div class="chapter-opener compact-opener">
+        <span class="chapter-number">FRONT MATTER · NOW</span>
+        <h2>What has my attention right now.</h2>
+      </div>
+      <div class="now-grid">
+        <article><span>CURRENTLY GOING DEEP ON</span><p id="current-focus">Reliable agentic AI systems</p></article>
+        <article><span>QUESTION I KEEP POKING</span><p id="current-question">How do we evaluate and diagnose tool-using agents under real failure modes?</p></article>
+        <article><span>LATEST MILESTONE</span><p id="current-milestone">First research paper published on IEEE Xplore — IEEE ICDH 2026</p></article>
+      </div>
+      <span id="state-updated" class="state-updated"></span>
+      <div class="page-turn-row"><a href="#contents" data-chapter-link>← Contents</a><a href="#engineering" data-chapter-link>Begin Chapter 01 →</a></div>
+      <div class="page-folio"><span>FRONT MATTER</span><span>7</span></div>
+    </section>
 
-    <section id="research" class="lore-section research-band"><div class="container"><div class="chapter-heading reveal"><div><span class="chapter-label">RESEARCH</span><h2>Does it actually work?</h2></div><p>I am interested in capability amplification, reasoning, evaluation and methods that improve AI systems without treating model scale as the only answer.</p></div><div class="research-grid reveal"><article class="research-card featured"><div class="research-meta"><span>IEEE ICDH 2026 · Published</span><span>Biomedical AI</span></div><h3>Adverse Drug Event Prediction in Pharmacovigilance Using KG-Augmented LLM</h3><p>My first published research paper: knowledge-graph-augmented reasoning for adverse drug event prediction using biomedical entity linking, semantic retrieval and structured evidence.</p><div class="research-links"><a href="https://ieeexplore.ieee.org/abstract/document/11662245" target="_blank" rel="noreferrer">Read on IEEE Xplore ↗</a><a href="https://github.com/showman-sharma/drug_ae_reasoner" target="_blank" rel="noreferrer">Code ↗</a></div></article><article class="research-card"><div class="research-meta"><span>Code Generation</span><span>Evaluation</span></div><h3>Inference-time strategies for code generation</h3><p>HumanEval experiments across self-consistency, structured reasoning, planning, refinement, recursive criticism and test-based enhancement.</p><a href="https://github.com/showman-sharma/codegen-ui-research" target="_blank" rel="noreferrer">See experiments ↗</a></article><article class="research-card"><div class="research-meta"><span>Current direction</span><span>Agents</span></div><h3>Reliable agentic AI systems</h3><p>Tool use, failure analysis, evaluation, retrieval, observability and the engineering required to make agents dependable in real products.</p></article></div></div></section>
+    <section id="engineering" class="book-page book-chapter reveal" data-chapter="engineering">
+      <div class="chapter-opener">
+        <span class="chapter-number">CHAPTER 01</span>
+        <h2>Engineering</h2>
+        <p>Build the thing. Then build the system around it.</p>
+      </div>
 
-    <section id="education" class="lore-section container"><div class="chapter-heading reveal"><div><span class="chapter-label">LEARNING</span><h2>The roads that taught me<br>how to think.</h2></div><p>The degrees matter less as trophies than as the sequence they created: engineering foundations, formal AI/ML specialization, then research-oriented postgraduate work.</p></div><div class="education-grid reveal"><article class="education-card"><div class="crest">I</div><h3>IIT Madras</h3><div class="degree">B.Tech · Electrical Engineering<br>Minor in AI/ML</div><p>Engineering, mathematics, systems thinking and the foundations that came before the AI label became the center of gravity.</p></article><article class="education-card"><div class="crest">II</div><h3>IIIT Bangalore</h3><div class="degree">EPGP · Artificial Intelligence & Machine Learning</div><p>Formal specialization across machine learning and applied AI. Graduated as valedictorian.</p></article><article class="education-card"><div class="crest">III</div><h3>Liverpool John Moores University</h3><div class="degree">MSc · Artificial Intelligence & Machine Learning · Merit</div><p>Thesis: <em>Prompt Engineering for Efficient Code Generation with LLMs</em>.</p></article></div></section>
+      <div class="subchapter-heading"><span>1.1</span><div><h3>AI/ML product engineering</h3><p>My strongest professional thread is turning model ideas into capabilities that fit enterprise products, then making the surrounding patterns reusable for other engineers.</p></div></div>
+      <div class="enterprise-grid">
+        <article class="enterprise-card"><span class="enterprise-meta">ML product engineering · anomaly detection</span><h3>From model logic to product behavior</h3><p>Built and evolved anomaly-detection capabilities inside enterprise billing workflows, spanning data preparation, model behavior, explainability, backend integration, performance investigation and stabilization after QA handoff.</p><span class="proof-line">Model engineering · SQL/data flows · performance analysis · release support</span></article>
+        <article class="enterprise-card"><span class="enterprise-meta">Predictive systems · product integration</span><h3>ML that participates in a real product</h3><p>Worked on predictive capabilities where training was only one layer: configuration, backend services, business behavior, model validation, governance documentation, environment support and product integration all mattered.</p><span class="proof-line">Predictive ML · backend integration · explainability/governance · issue triage</span></article>
+        <article class="enterprise-card"><span class="enterprise-meta">Reusable foundations · self-initiated</span><h3>Stop rebuilding the same plumbing</h3><p>Initiated and architected reusable ML foundations for data preparation, training, inference and configuration so multiple use cases and engineers could build on common patterns instead of bespoke pipelines.</p><span class="proof-line">Architecture · reuse · developer enablement · adoption</span></article>
+        <article class="enterprise-card"><span class="enterprise-meta">Technical leadership</span><h3>Design it, integrate it, get it release-ready</h3><p>Independently delivered AI capabilities across requirements, SQL/backend work, ML logic, application integration, engineering validation, deployment support, QA handoff and release readiness — while increasingly guiding freshers and interns.</p><span class="proof-line">Cross-stack ownership · technical direction · delivery through others</span></article>
+      </div>
+      <aside class="margin-note"><strong>Public-safe by design.</strong> These are deliberately sanitized case studies. No customer data, proprietary code, confidential architecture or internal screenshots are shown here.</aside>
 
-    <section id="writing" class="lore-section container writing-section"><div class="chapter-heading reveal"><div><span class="chapter-label">WRITING</span><h2>Ideas that escaped<br>the notebook.</h2></div><p>Technical essays, research notes and longer arguments. The website is the index; the writing can live wherever it was originally published.</p></div><div id="writing-grid" class="writing-grid reveal"><article class="writing-card featured"><div class="writing-meta"><span>LinkedIn</span><span>Jul 4, 2026</span></div><h3>The Harness Is The Product</h3><p>Why the engineering around the model — retrieval, permissions, tooling, governance, observability and auditability — often determines whether enterprise AI actually works.</p><a class="writing-link" href="https://www.linkedin.com/pulse/harness-product-hidden-engineering-behind-enterprise-anirudh-sharma-y2lef" target="_blank" rel="noreferrer">Read on LinkedIn ↗</a></article></div></section>
+      <div class="subchapter-heading"><span>1.2</span><div><h3>Selected public work</h3><p>Things you can inspect rather than take on faith.</p></div></div>
+      <div class="filter-bar" id="filters"><button class="filter active" data-filter="all">Everything</button><button class="filter" data-filter="research">Research</button><button class="filter" data-filter="systems">AI systems</button><button class="filter" data-filter="ml">ML</button><button class="filter" data-filter="community">Open source</button></div>
+      <div id="project-grid" class="project-grid"></div>
+      <div class="page-turn-row"><a href="#current" data-chapter-link>← Front matter</a><a href="#research" data-chapter-link>Chapter 02 · Research →</a></div>
+      <div class="page-folio"><span>CHAPTER 01 · ENGINEERING</span><span>12</span></div>
+    </section>
 
-    <section id="making" class="lore-section container"><div class="chapter-heading reveal"><div><span class="chapter-label">MAKING · STAGE · COMMUNITY</span><h2>Not everything useful<br>needs a KPI.</h2></div><p>Some things exist because making them changes how I think, communicate or pay attention.</p></div><div class="side-quests reveal"><article class="side-quest"><span>✎</span><h3>Drawing</h3><p>Sketches, visual thinking and the pleasure of making something with no deployment pipeline attached.</p></article><article class="side-quest"><span>◉</span><h3>Cinema</h3><p>Indian cinema, visual storytelling, performance, memory, music and an unreasonable willingness to discuss all of it.</p></article><article class="side-quest"><span>♬</span><h3>Stage</h3><p>Demos, talks, comedy, performance — I like the moment where an idea has to survive an audience.</p></article><article class="side-quest"><span>↗</span><h3>Community</h3><p>Gradient Ascent Syndicate, mentoring, teaching and building systems that let other people move faster too.</p></article></div></section>
+    <section id="research" class="book-page book-chapter reveal" data-chapter="research">
+      <div class="chapter-opener">
+        <span class="chapter-number">CHAPTER 02</span>
+        <h2>Research</h2>
+        <p>Does it actually work?</p>
+      </div>
+      <div class="subchapter-heading"><span>2.1</span><div><h3>Published work</h3><p>Research is where interesting ideas have to survive evidence.</p></div></div>
+      <div class="research-grid">
+        <article class="research-card featured"><div class="research-meta"><span>IEEE ICDH 2026 · Published</span><span>Biomedical AI</span></div><h3>Adverse Drug Event Prediction in Pharmacovigilance Using KG-Augmented LLM</h3><p>My first published research paper: knowledge-graph-augmented reasoning for adverse drug event prediction using biomedical entity linking, semantic retrieval and structured evidence.</p><div class="research-links"><a href="https://ieeexplore.ieee.org/abstract/document/11662245" target="_blank" rel="noreferrer">Read on IEEE Xplore ↗</a><a href="https://github.com/showman-sharma/drug_ae_reasoner" target="_blank" rel="noreferrer">Code ↗</a></div></article>
+      </div>
+      <div class="subchapter-heading"><span>2.2</span><div><h3>Experiments &amp; current questions</h3><p>Capability amplification, reasoning, evaluation and methods that improve AI systems without treating model scale as the only answer.</p></div></div>
+      <div class="research-grid two-up">
+        <article class="research-card"><div class="research-meta"><span>Code Generation</span><span>Evaluation</span></div><h3>Inference-time strategies for code generation</h3><p>HumanEval experiments across self-consistency, structured reasoning, planning, refinement, recursive criticism and test-based enhancement.</p><a href="https://github.com/showman-sharma/codegen-ui-research" target="_blank" rel="noreferrer">See experiments ↗</a></article>
+        <article class="research-card"><div class="research-meta"><span>Current direction</span><span>Agents</span></div><h3>Reliable agentic AI systems</h3><p>Tool use, failure analysis, evaluation, retrieval, observability and the engineering required to make agents dependable in real products.</p></article>
+      </div>
+      <div class="page-turn-row"><a href="#engineering" data-chapter-link>← Chapter 01</a><a href="#education" data-chapter-link>Chapter 03 · Learning →</a></div>
+      <div class="page-folio"><span>CHAPTER 02 · RESEARCH</span><span>28</span></div>
+    </section>
 
-    <section id="about" class="lore-section container reveal"><div class="about-panel about-clean"><div class="about-copy"><span class="chapter-label">ANIRUDH · THE PERSON BETWEEN THE PLACES</span><h2>No single pursuit gets to become the whole identity.</h2><p>Engineering is important to me. So are research, writing, making, cinema, stage, people and the occasional strange obsession. I like building structure around ambiguity, explaining hard things clearly, and making serious work feel a little more alive.</p><p>The best description is probably not a title. It is a pattern: learn something, build something, explain it, systematize it, and bring other people in.</p><div class="about-chips"><span>engineering</span><span>research</span><span>writing</span><span>drawing</span><span>cinema</span><span>stage</span><span>community</span></div></div></div></section>
+    <section id="education" class="book-page book-chapter reveal" data-chapter="education">
+      <div class="chapter-opener">
+        <span class="chapter-number">CHAPTER 03</span>
+        <h2>Learning</h2>
+        <p>The roads that taught me how to think.</p>
+      </div>
+      <div class="subchapter-heading"><span>3.1</span><div><h3>Formal education</h3><p>The degrees matter less as trophies than as the sequence they created: engineering foundations, formal AI/ML specialization, then research-oriented postgraduate work.</p></div></div>
+      <div class="education-grid">
+        <article class="education-card"><div class="crest">I</div><h3>IIT Madras</h3><div class="degree">B.Tech · Electrical Engineering<br>Minor in AI/ML</div><p>Engineering, mathematics, systems thinking and the foundations that came before the AI label became the center of gravity.</p></article>
+        <article class="education-card"><div class="crest">II</div><h3>IIIT Bangalore</h3><div class="degree">EPGP · Artificial Intelligence &amp; Machine Learning</div><p>Formal specialization across machine learning and applied AI. Graduated as valedictorian.</p></article>
+        <article class="education-card"><div class="crest">III</div><h3>Liverpool John Moores University</h3><div class="degree">MSc · Artificial Intelligence &amp; Machine Learning · Merit</div><p>Thesis: <em>Prompt Engineering for Efficient Code Generation with LLMs</em>.</p></article>
+      </div>
+      <div class="subchapter-heading"><span>3.2</span><div><h3>What learning looks like now</h3><p>Less collecting topics, more staying with difficult questions long enough to develop judgment: agents, evaluation, inference-time reasoning and reliable AI systems.</p></div></div>
+      <div class="page-turn-row"><a href="#research" data-chapter-link>← Chapter 02</a><a href="#writing" data-chapter-link>Chapter 04 · Writing →</a></div>
+      <div class="page-folio"><span>CHAPTER 03 · LEARNING</span><span>38</span></div>
+    </section>
 
-    <section class="lore-section container reveal"><div class="manifesto"><span class="kicker">INSCRIPTION</span><p><strong>I do everything sincerely.</strong><br>I take nothing seriously.</p></div></section>
+    <section id="writing" class="book-page book-chapter reveal" data-chapter="writing">
+      <div class="chapter-opener">
+        <span class="chapter-number">CHAPTER 04</span>
+        <h2>Writing</h2>
+        <p>Ideas that escaped the notebook.</p>
+      </div>
+      <div class="subchapter-heading"><span>4.1</span><div><h3>Essays &amp; explanations</h3><p>Technical essays, research notes and longer arguments. The website is the index; the writing can live wherever it was originally published.</p></div></div>
+      <div id="writing-grid" class="writing-grid"><article class="writing-card featured"><div class="writing-meta"><span>LinkedIn</span><span>Jul 4, 2026</span></div><h3>The Harness Is The Product</h3><p>Why the engineering around the model — retrieval, permissions, tooling, governance, observability and auditability — often determines whether enterprise AI actually works.</p><a class="writing-link" href="https://www.linkedin.com/pulse/harness-product-hidden-engineering-behind-enterprise-anirudh-sharma-y2lef" target="_blank" rel="noreferrer">Read on LinkedIn ↗</a></article></div>
+      <div class="page-turn-row"><a href="#education" data-chapter-link>← Chapter 03</a><a href="#making" data-chapter-link>Chapter 05 · Making →</a></div>
+      <div class="page-folio"><span>CHAPTER 04 · WRITING</span><span>46</span></div>
+    </section>
 
-    <section id="contact" class="lore-section container contact reveal"><span class="chapter-label">CONTACT</span><h2>Good problem?<br>Interesting person?</h2><p>If you want to talk engineering, research, agents, writing, open source, startup ideas, cinema, or something unexpectedly adjacent — say hello.</p><div class="contact-links"><a href="mailto:vanirudhsharma@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/ml-engineer-v-s-s-anirudh-sharma/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/showman-sharma" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://x.com/showman_sharma" target="_blank" rel="noreferrer">X ↗</a><a href="https://www.instagram.com/showman_sharma/" target="_blank" rel="noreferrer">Instagram ↗</a></div></section>
+    <section id="making" class="book-page book-chapter reveal" data-chapter="making">
+      <div class="chapter-opener">
+        <span class="chapter-number">CHAPTER 05</span>
+        <h2>Making</h2>
+        <p>Not everything useful needs a KPI.</p>
+      </div>
+      <div class="subchapter-heading"><span>5.1</span><div><h3>Things made for reasons other than work</h3><p>Some things exist because making them changes how I notice, communicate or pay attention.</p></div></div>
+      <div class="side-quests">
+        <article class="side-quest"><span>✎</span><h3>Drawing</h3><p>Sketches, visual thinking and the pleasure of making something with no deployment pipeline attached.</p></article>
+        <article class="side-quest"><span>◉</span><h3>Cinema</h3><p>Indian cinema, visual storytelling, performance, memory, music and an unreasonable willingness to discuss all of it.</p></article>
+        <article class="side-quest"><span>◇</span><h3>Side projects</h3><p>Experiments that may begin as software, research, design, writing — or something I have not found a category for yet.</p></article>
+      </div>
+      <div class="page-turn-row"><a href="#writing" data-chapter-link>← Chapter 04</a><a href="#stage" data-chapter-link>Chapter 06 · Stage &amp; People →</a></div>
+      <div class="page-folio"><span>CHAPTER 05 · MAKING</span><span>54</span></div>
+    </section>
+
+    <section id="stage" class="book-page book-chapter reveal" data-chapter="stage">
+      <div class="chapter-opener">
+        <span class="chapter-number">CHAPTER 06</span>
+        <h2>Stage &amp; People</h2>
+        <p>Ideas change when another person is in the room.</p>
+      </div>
+      <div class="side-quests stage-grid">
+        <article class="side-quest"><span>♬</span><h3>Stage</h3><p>Demos, talks, comedy, performance — I like the moment where an idea has to survive an audience.</p></article>
+        <article class="side-quest"><span>↗</span><h3>Community</h3><p>Gradient Ascent Syndicate, mentoring, teaching and building systems that let other people move faster too.</p></article>
+        <article class="side-quest"><span>◎</span><h3>Explaining</h3><p>Teaching and communication are not side effects of technical work for me. They are part of how I test whether I understand it.</p></article>
+      </div>
+      <div class="page-turn-row"><a href="#making" data-chapter-link>← Chapter 05</a><a href="#about" data-chapter-link>Chapter 07 · Anirudh →</a></div>
+      <div class="page-folio"><span>CHAPTER 06 · STAGE &amp; PEOPLE</span><span>62</span></div>
+    </section>
+
+    <section id="about" class="book-page book-chapter reveal" data-chapter="about">
+      <div class="chapter-opener">
+        <span class="chapter-number">CHAPTER 07</span>
+        <h2>Anirudh</h2>
+        <p>The person between all the chapters.</p>
+      </div>
+      <div class="about-spread">
+        <div class="about-copy">
+          <p class="dropcap">Engineering is important to me. So are research, writing, making, cinema, stage, people and the occasional strange obsession. I like building structure around ambiguity, explaining hard things clearly, and making serious work feel a little more alive.</p>
+          <p>The best description is probably not a title. It is a pattern: learn something, build something, explain it, systematize it, and bring other people in.</p>
+          <div class="about-chips"><span>engineering</span><span>research</span><span>writing</span><span>drawing</span><span>cinema</span><span>stage</span><span>community</span></div>
+        </div>
+        <blockquote class="book-quote">“I do everything sincerely.<br>I take nothing seriously.”</blockquote>
+      </div>
+      <div class="page-turn-row"><a href="#stage" data-chapter-link>← Chapter 06</a><a href="#contact" data-chapter-link>Afterword · Contact →</a></div>
+      <div class="page-folio"><span>CHAPTER 07 · ANIRUDH</span><span>70</span></div>
+    </section>
+
+    <section id="contact" class="book-page contact-page reveal" data-chapter="contact">
+      <div class="chapter-opener compact-opener">
+        <span class="chapter-number">AFTERWORD</span>
+        <h2>Good problem?<br>Interesting person?</h2>
+        <p>If you want to talk engineering, research, agents, writing, open source, startup ideas, cinema, or something unexpectedly adjacent — say hello.</p>
+      </div>
+      <div class="contact-links"><a href="mailto:vanirudhsharma@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/ml-engineer-v-s-s-anirudh-sharma/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/showman-sharma" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://x.com/showman_sharma" target="_blank" rel="noreferrer">X ↗</a><a href="https://www.instagram.com/showman_sharma/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+      <div class="page-turn-row"><a href="#about" data-chapter-link>← Chapter 07</a><a href="#cover" data-chapter-link>Close the book ↑</a></div>
+      <div class="page-folio"><span>AFTERWORD</span><span>76</span></div>
+    </section>
   </main>
-  <a class="return-to-atlas" href="#atlas">↑ Map</a>
-  <footer class="container footer"><span>© <span id="year"></span> Anirudh Sharma</span><span>A map, not a final definition.</span></footer>
+
+  <footer class="book-footer"><span>© <span id="year"></span> Anirudh Sharma</span><span>A book in progress.</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
