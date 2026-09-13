@@ -27,7 +27,7 @@ function projectCard(project, index) {
   if (!title || !category || !description || !github) return null;
 
   const card = document.createElement("article");
-  card.className = "project-card reveal visible";
+  card.className = "project-card";
   card.dataset.category = category;
 
   const idx = document.createElement("span");
@@ -94,36 +94,18 @@ document.querySelectorAll(".filter").forEach(btn => {
   });
 });
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("visible");
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-// The site is intentionally light-only. Clear preferences from older versions.
-localStorage.removeItem("portfolio-theme");
-document.documentElement.removeAttribute("data-theme");
-
-const year = document.getElementById("year");
-if (year) year.textContent = new Date().getFullYear();
-
 const FIELD_LIMITS = { focus: 90, question: 180, milestone: 160 };
-
 async function loadPortfolioState() {
   try {
     const response = await fetch("data/portfolio-state.json", { cache: "no-store" });
     if (!response.ok) return;
     const data = await response.json();
     if (data.schema_version !== 1 || !data.current) return;
-
     [["focus", "current-focus"], ["question", "current-question"], ["milestone", "current-milestone"]].forEach(([field, id]) => {
       const value = safeText(data.current[field], FIELD_LIMITS[field]);
       const el = document.getElementById(id);
       if (value && el) el.textContent = value;
     });
-
     const updated = safeText(data.last_updated, 10);
     const updatedEl = document.getElementById("state-updated");
     if (updated && /^\d{4}-\d{2}-\d{2}$/.test(updated) && updatedEl) {
@@ -133,15 +115,10 @@ async function loadPortfolioState() {
 }
 
 const ARTICLE_LIMITS = { title: 140, source: 30, summary: 240, tag: 32 };
-
 function formatArticleDate(date) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date || "")) return "";
   const [y, m, d] = date.split("-").map(Number);
-  return new Date(y, m - 1, d).toLocaleDateString("en", {
-    year: "numeric",
-    month: "short",
-    day: "numeric"
-  });
+  return new Date(y, m - 1, d).toLocaleDateString("en", { year: "numeric", month: "short", day: "numeric" });
 }
 
 function makeArticleCard(article) {
@@ -154,7 +131,6 @@ function makeArticleCard(article) {
 
   const card = document.createElement("article");
   card.className = `writing-card${article.featured === true ? " featured" : ""}`;
-
   const meta = document.createElement("div");
   meta.className = "writing-meta";
   const sourceEl = document.createElement("span");
@@ -187,7 +163,6 @@ function makeArticleCard(article) {
   link.rel = "noreferrer";
   link.className = "writing-link";
   link.textContent = `Read on ${source} ↗`;
-
   card.append(meta, heading, description, tags, link);
   return card;
 }
@@ -200,17 +175,121 @@ async function loadWriting() {
     if (!response.ok) return;
     const data = await response.json();
     if (data.schema_version !== 1 || !Array.isArray(data.articles)) return;
-
     const valid = data.articles
       .filter(a => a && a.published !== false)
       .sort((a, b) => String(b.date).localeCompare(String(a.date)))
       .slice(0, 6)
       .map(makeArticleCard)
       .filter(Boolean);
-
     if (valid.length) writingGrid.replaceChildren(...valid);
   } catch (_) {}
 }
+
+// Light / night mode --------------------------------------------------------
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle?.querySelector("span");
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+function preferredTheme() {
+  const saved = localStorage.getItem("portfolio-theme");
+  if (saved === "light" || saved === "dark") return saved;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(theme, persist = false) {
+  document.documentElement.dataset.theme = theme;
+  if (persist) localStorage.setItem("portfolio-theme", theme);
+  if (themeIcon) themeIcon.textContent = theme === "dark" ? "☀" : "☾";
+  if (themeToggle) {
+    const next = theme === "dark" ? "light" : "night";
+    themeToggle.setAttribute("aria-label", `Switch to ${next} mode`);
+    themeToggle.title = `Switch to ${next} mode`;
+  }
+  if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#0f0e0d" : "#efe8dc");
+}
+
+applyTheme(preferredTheme());
+themeToggle?.addEventListener("click", () => {
+  const current = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  applyTheme(current === "dark" ? "light" : "dark", true);
+});
+
+// Chapter navigation --------------------------------------------------------
+const chapterPages = Array.from(document.querySelectorAll(".book-page"));
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function pageForHash(hash) {
+  if (!hash || !hash.startsWith("#")) return null;
+  return document.querySelector(hash);
+}
+
+function turnTo(target) {
+  if (!target) return;
+  const current = chapterPages.find(page => {
+    const rect = page.getBoundingClientRect();
+    return rect.top <= window.innerHeight * .35 && rect.bottom >= window.innerHeight * .35;
+  });
+
+  if (reducedMotion.matches) {
+    target.scrollIntoView({ behavior: "auto", block: "start" });
+    return;
+  }
+
+  current?.classList.add("page-exit");
+  window.setTimeout(() => {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    target.classList.add("page-enter");
+    window.setTimeout(() => {
+      current?.classList.remove("page-exit");
+      target.classList.remove("page-enter");
+    }, 620);
+  }, 110);
+}
+
+document.querySelectorAll("[data-chapter-link]").forEach(link => {
+  link.addEventListener("click", event => {
+    const hash = link.getAttribute("href");
+    const target = pageForHash(hash);
+    if (!target) return;
+    event.preventDefault();
+    history.pushState(null, "", hash);
+    turnTo(target);
+  });
+});
+
+function nearestPageIndex() {
+  const center = window.innerHeight * .42;
+  let best = 0;
+  let distance = Infinity;
+  chapterPages.forEach((page, i) => {
+    const rect = page.getBoundingClientRect();
+    const d = Math.abs(rect.top - center);
+    if (d < distance) { distance = d; best = i; }
+  });
+  return best;
+}
+
+document.addEventListener("keydown", event => {
+  if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
+  const tag = document.activeElement?.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "BUTTON") return;
+  if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+  const index = nearestPageIndex();
+  const next = event.key === "ArrowRight" ? index + 1 : index - 1;
+  if (next < 0 || next >= chapterPages.length) return;
+  event.preventDefault();
+  const target = chapterPages[next];
+  history.pushState(null, "", `#${target.id}`);
+  turnTo(target);
+});
+
+window.addEventListener("popstate", () => {
+  const target = pageForHash(location.hash);
+  if (target) target.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
+});
+
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
 
 loadProjects();
 loadPortfolioState();
