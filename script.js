@@ -99,14 +99,9 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-const themeToggle = document.getElementById("theme-toggle");
-const savedTheme = localStorage.getItem("portfolio-theme");
-if (savedTheme) document.documentElement.dataset.theme = savedTheme;
-if (themeToggle) themeToggle.addEventListener("click", () => {
-  const next = document.documentElement.dataset.theme === "light" ? "dark" : "light";
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem("portfolio-theme", next);
-});
+// The atlas is intentionally parchment-only. Remove any legacy theme preference.
+localStorage.removeItem("portfolio-theme");
+document.documentElement.removeAttribute("data-theme");
 
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
@@ -176,10 +171,6 @@ async function loadSeasonalLayer() {
     const label = safeText(active.label, 60);
     const greeting = document.getElementById("seasonal-greeting");
     if (label && greeting) { greeting.textContent = `${label} · `; greeting.hidden = false; }
-    const palette = seasonalThemes[active.theme];
-    document.documentElement.style.setProperty("--yellow", palette.yellow);
-    document.documentElement.style.setProperty("--pink", palette.pink);
-    document.documentElement.style.setProperty("--orange", palette.orange);
   } catch (_) {}
 }
 
@@ -198,11 +189,9 @@ function makeArticleCard(article) {
   const url = safePublicUrl(article.url);
   const date = formatArticleDate(article.date);
   if (!title || !source || !summary || !url || !date) return null;
-
   const card = document.createElement("article");
   card.className = `writing-card${article.featured === true ? " featured" : ""}`;
-  const meta = document.createElement("div");
-  meta.className = "writing-meta";
+  const meta = document.createElement("div"); meta.className = "writing-meta";
   const sourceEl = document.createElement("span"); sourceEl.textContent = source;
   const dateEl = document.createElement("span"); dateEl.textContent = date;
   meta.append(sourceEl, dateEl);
