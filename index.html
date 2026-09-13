@@ -17,25 +17,99 @@
 </head>
 <body>
   <div id="cursor-glow" aria-hidden="true"></div>
-  <header class="nav-wrap"><nav class="nav container"><a class="brand" href="#top"><img class="brand-avatar" src="https://github.com/showman-sharma.png" alt="Anirudh Sharma" width="38" height="38" style="width:38px;height:38px;object-fit:cover;border-radius:50%;display:block" /><span>Anirudh Sharma</span></a><div class="nav-links"><a href="#atlas">Atlas</a><a href="#engineering">Engineering</a><a href="#research">Research</a><a href="#education">Learning</a><a href="#writing">Writing</a><a href="#making">Making</a><a href="#contact">Contact</a></div><button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">☾</button></nav></header>
+  <header class="nav-wrap"><nav class="nav container"><a class="brand" href="#top"><img class="brand-avatar" src="https://github.com/showman-sharma.png" alt="Anirudh Sharma" width="38" height="38" style="width:38px;height:38px;object-fit:cover;border-radius:50%;display:block" /><span>Anirudh Sharma</span></a><div class="nav-links"><a href="#atlas">Atlas</a><a href="#engineering">Engineering</a><a href="#research">Research</a><a href="#education">Learning</a><a href="#writing">Writing</a><a href="#making">Making</a><a href="#contact">Contact</a></div></nav></header>
 
   <main id="top">
     <section class="lore-hero container reveal"><div><div class="lore-kicker"><span id="seasonal-greeting" hidden></span><span id="hero-eyebrow">A personal atlas · Hyderabad</span></div><h1 class="atlas-title"><span>The Atlas of</span>Anirudh <em>Sharma</em></h1><p class="lore-deck">I build, study, write, draw, explain, and occasionally get obsessed with strange problems. <strong>None of those things is all of me.</strong></p><p class="lore-note">This is less a portfolio and more a map: a record of the territories I keep returning to, the paths between them, and a few expeditions still underway.</p></div><figure class="portrait-plate tilt-card"><img src="assets/images/hero-suit.jpg" alt="Anirudh Sharma" /><figcaption class="portrait-caption"><span>Portrait of the cartographer</span><span>Engineer · researcher · writer · maker</span></figcaption></figure></section>
 
     <section id="atlas" class="atlas-section container reveal" aria-labelledby="atlas-heading">
-      <div class="atlas-heading-row"><div><span class="chapter-label">MAP I · THE KNOWN WORLD</span><h2 id="atlas-heading">Choose a territory.</h2></div><p>Every region is one pursuit. Roads cross between them because that is usually where the interesting work happens.</p></div>
+      <div class="atlas-heading-row"><div><span class="chapter-label">MAP I · THE KNOWN WORLD</span><h2 id="atlas-heading">Choose a territory.</h2></div><p>This is the actual map of the site. Each land is one pursuit; the roads, rivers and sea lanes show where those pursuits keep colliding.</p></div>
       <div class="legendary-map" role="navigation" aria-label="Map of Anirudh Sharma's pursuits">
-        <div class="map-gridlines" aria-hidden="true"></div><div class="map-coast coast-a" aria-hidden="true"></div><div class="map-coast coast-b" aria-hidden="true"></div><div class="map-mountains mountains-a" aria-hidden="true">⌃ ⌃ ⌃<br>⌃ ⌃</div><div class="map-waves waves-a" aria-hidden="true">≈ ≈ ≈ ≈ ≈</div>
-        <svg class="map-routes" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true"><path d="M500 350 C430 270, 330 220, 235 190" /><path d="M500 350 C585 275, 690 230, 805 185" /><path d="M500 350 C390 390, 300 470, 215 535" /><path d="M500 350 C610 395, 690 470, 800 535" /><path d="M500 350 C505 455, 505 535, 505 610" /><path d="M235 190 C360 160, 620 150, 805 185" /></svg>
-        <a class="map-region region-engineering" href="#engineering"><span class="map-symbol">⚙</span><span class="map-index">I</span><strong>The Engineering Provinces</strong><small>AI/ML product work · systems · architecture</small></a>
-        <a class="map-region region-research" href="#research"><span class="map-symbol">✦</span><span class="map-index">II</span><strong>The Research Archives</strong><small>papers · experiments · reasoning · evaluation</small></a>
-        <a class="map-region region-learning" href="#education"><span class="map-symbol">⌂</span><span class="map-index">III</span><strong>The Academy Roads</strong><small>IITM · IIITB · LJMU · ongoing study</small></a>
-        <a class="map-region region-writing" href="#writing"><span class="map-symbol">✒</span><span class="map-index">IV</span><strong>The Writing Quarter</strong><small>essays · notes · arguments · explanations</small></a>
-        <a class="map-region region-making" href="#making"><span class="map-symbol">◇</span><span class="map-index">V</span><strong>The Makers' Coast</strong><small>drawing · stage · cinema · community</small></a>
-        <a class="map-region region-self" href="#about"><span class="you-are-here">YOU ARE HERE</span><span class="map-symbol crest-self">AS</span><strong>Anirudh</strong><small>No region gets to claim the whole map.</small></a>
-        <div class="compass-rose" aria-hidden="true"><span>N</span><b>✥</b><small>S</small></div>
-        <div class="map-legend"><span class="legend-title">LEGEND</span><div><i>✦</i> ideas pursued</div><div><i>—</i> paths between them</div><div><i>AS</i> the person at the centre</div></div>
-        <div class="map-inscription">Some paths are careers. Some are curiosities. Most are both.</div>
+        <svg class="atlas-svg" viewBox="0 0 1200 760" role="img" aria-labelledby="map-title map-desc">
+          <title id="map-title">The Atlas of Anirudh Sharma</title>
+          <desc id="map-desc">An illustrated fantasy-style map with clickable regions for Engineering, Research, Learning, Writing, Making and About.</desc>
+          <defs>
+            <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="2.8"/></filter>
+            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#6a4a2b" flood-opacity=".18"/></filter>
+            <pattern id="waves" width="28" height="16" patternUnits="userSpaceOnUse"><path d="M0 8 Q7 2 14 8 T28 8" fill="none" stroke="#6e8790" stroke-opacity=".18" stroke-width="1"/></pattern>
+          </defs>
+
+          <rect width="1200" height="760" fill="#ead6aa"/>
+          <rect width="1200" height="760" fill="url(#waves)" opacity=".85"/>
+          <path class="map-border" d="M28 28 H1172 V732 H28 Z"/>
+          <path class="map-border inner" d="M42 42 H1158 V718 H42 Z"/>
+
+          <g class="ocean-ornaments" aria-hidden="true">
+            <text x="88" y="670">~ ~ ~</text><text x="952" y="110">~ ~ ~</text><text x="1010" y="630">~ ~ ~</text>
+            <text class="ocean-label" x="72" y="602">THE OPEN SEA</text><text class="ocean-label" x="930" y="700">COAST OF MAKING</text>
+          </g>
+
+          <g class="mountains" aria-hidden="true">
+            <path d="M114 142 l22 -34 l22 34 l28 -44 l28 44 l24 -30 l22 30"/><path d="M895 290 l19 -28 l20 28 l24 -38 l25 38 l18 -24 l19 24"/><path d="M455 612 l18 -27 l18 27 l24 -36 l24 36 l18 -25 l18 25"/>
+          </g>
+
+          <g class="roads" aria-hidden="true">
+            <path d="M525 365 C430 305 350 245 276 215"/><path d="M585 338 C690 265 790 210 890 195"/><path d="M510 408 C400 458 320 510 252 558"/><path d="M610 405 C745 420 835 455 910 493"/><path d="M572 430 C590 515 610 575 640 627"/>
+          </g>
+
+          <g class="river" aria-hidden="true"><path d="M835 128 C770 175 790 250 730 285 C680 314 705 370 650 405 C600 438 612 514 572 575"/></g>
+
+          <a href="#engineering" class="territory territory-engineering">
+            <g filter="url(#softShadow)">
+              <path class="land" d="M105 150 C150 105 250 98 326 128 C383 151 405 201 387 248 C370 295 319 329 260 324 C209 320 175 347 126 322 C79 298 60 244 72 203 C79 180 91 163 105 150 Z"/>
+              <path class="coast-detail" d="M101 173 C145 135 232 127 299 148 C337 160 361 187 365 218"/>
+              <circle class="city-dot" cx="238" cy="222" r="5"/>
+              <text class="territory-title" x="232" y="198" text-anchor="middle">THE ENGINEERING</text><text class="territory-title" x="232" y="221" text-anchor="middle">PROVINCES</text><text class="territory-sub" x="232" y="245" text-anchor="middle">systems · product · architecture</text>
+            </g>
+          </a>
+
+          <a href="#research" class="territory territory-research">
+            <g filter="url(#softShadow)">
+              <path class="land" d="M805 108 C860 78 951 82 1017 115 C1070 142 1101 189 1084 234 C1066 280 1009 304 944 294 C884 285 846 309 802 276 C758 243 748 188 770 148 C779 131 790 118 805 108 Z"/>
+              <circle class="city-dot" cx="928" cy="194" r="5"/>
+              <text class="territory-title" x="927" y="172" text-anchor="middle">THE RESEARCH</text><text class="territory-title" x="927" y="195" text-anchor="middle">ARCHIVES</text><text class="territory-sub" x="927" y="219" text-anchor="middle">papers · experiments · evaluation</text>
+            </g>
+          </a>
+
+          <a href="#education" class="territory territory-learning">
+            <g filter="url(#softShadow)">
+              <path class="land" d="M100 470 C149 430 229 421 297 447 C352 468 380 514 363 559 C348 602 301 633 244 630 C190 627 151 648 112 620 C75 594 60 548 75 510 C81 494 90 480 100 470 Z"/>
+              <circle class="city-dot" cx="224" cy="534" r="5"/>
+              <text class="territory-title" x="224" y="510" text-anchor="middle">THE ACADEMY</text><text class="territory-title" x="224" y="533" text-anchor="middle">ROADS</text><text class="territory-sub" x="224" y="557" text-anchor="middle">IITM · IIITB · LJMU · study</text>
+            </g>
+          </a>
+
+          <a href="#writing" class="territory territory-writing">
+            <g filter="url(#softShadow)">
+              <path class="land" d="M835 386 C894 354 985 361 1040 397 C1082 425 1097 468 1080 508 C1061 552 1007 576 950 569 C897 563 856 585 821 554 C785 522 785 468 806 425 C814 409 824 396 835 386 Z"/>
+              <circle class="city-dot" cx="945" cy="466" r="5"/>
+              <text class="territory-title" x="945" y="444" text-anchor="middle">THE WRITING</text><text class="territory-title" x="945" y="467" text-anchor="middle">QUARTER</text><text class="territory-sub" x="945" y="491" text-anchor="middle">essays · notes · explanations</text>
+            </g>
+          </a>
+
+          <a href="#making" class="territory territory-making">
+            <g filter="url(#softShadow)">
+              <path class="land" d="M500 560 C550 526 647 526 712 557 C759 580 781 619 766 657 C751 697 700 719 641 713 C586 708 553 728 514 702 C474 676 454 635 469 598 C476 581 486 569 500 560 Z"/>
+              <circle class="city-dot" cx="622" cy="626" r="5"/>
+              <text class="territory-title" x="622" y="604" text-anchor="middle">THE MAKERS'</text><text class="territory-title" x="622" y="627" text-anchor="middle">COAST</text><text class="territory-sub" x="622" y="651" text-anchor="middle">drawing · stage · cinema · community</text>
+            </g>
+          </a>
+
+          <a href="#about" class="territory territory-self">
+            <g filter="url(#softShadow)">
+              <path class="land capital" d="M454 287 C498 252 573 245 631 271 C679 293 704 334 691 375 C678 415 632 445 577 444 C526 443 485 461 448 434 C410 406 398 365 413 327 C422 307 435 296 454 287 Z"/>
+              <circle class="capital-ring" cx="552" cy="354" r="28"/><circle class="capital-core" cx="552" cy="354" r="17"/>
+              <text class="capital-initials" x="552" y="359" text-anchor="middle">AS</text><text class="you-are-here-svg" x="552" y="315" text-anchor="middle">YOU ARE HERE</text><text class="territory-title capital-label" x="552" y="401" text-anchor="middle">ANIRUDH</text><text class="territory-sub" x="552" y="421" text-anchor="middle">the cartographer · not the territory</text>
+            </g>
+          </a>
+
+          <g class="compass" transform="translate(1090 610)" aria-hidden="true"><text x="0" y="-46" text-anchor="middle">N</text><path d="M0 -36 L10 -8 L0 0 L-10 -8 Z M0 36 L8 9 L0 0 L-8 9 Z M-36 0 L-9 -8 L0 0 L-9 8 Z M36 0 L9 -8 L0 0 L9 8 Z"/><circle cx="0" cy="0" r="6"/></g>
+          <g class="sea-monster" transform="translate(113 394) rotate(-8)" aria-hidden="true"><path d="M0 18 C16 -10 39 -8 49 6 C58 18 51 31 38 30 C24 29 27 12 37 13"/><path d="M5 19 l-15 8 M15 7 l-5 -16 M45 5 l12 -13"/></g>
+          <g class="ship" transform="translate(1018 344) rotate(8)" aria-hidden="true"><path d="M-28 14 Q0 28 28 14 L22 22 Q0 35 -22 22 Z"/><path d="M0 12 V-30 M0 -27 L23 -10 L0 -8 Z M-3 -22 L-20 -9 L-3 -7 Z"/></g>
+
+          <g class="map-legend-svg" transform="translate(70 650)"><text class="legend-head" x="0" y="0">LEGEND</text><text x="0" y="20">●  settlements of attention</text><text x="0" y="38">- - roads between pursuits</text><text x="0" y="56">AS  the person, not the label</text></g>
+          <text class="map-inscription-svg" x="1015" y="676" text-anchor="end">Some paths are careers. Some are curiosities. Most are both.</text>
+        </svg>
       </div>
     </section>
 
