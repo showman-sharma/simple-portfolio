@@ -7,39 +7,35 @@
       .bg{fill:var(--bg)}.frame{fill:none;stroke:#c9c2b7;stroke-width:1.5}.outline{fill:#f7f3eb;stroke:#5f5a53;stroke-width:2.2}
       .contour{fill:none;stroke:#bdb6ab;stroke-width:1;opacity:.48}.river{fill:none;stroke:var(--water);stroke-width:5;opacity:.82;stroke-linecap:round}.road{fill:none;stroke:#9b8977;stroke-width:1.7;stroke-dasharray:7 8;opacity:.8}.border{fill:none;stroke:#8f8981;stroke-width:1.4;stroke-dasharray:5 7;opacity:.62}
       .district{transition:opacity .2s}.district:hover .wash{opacity:.86}.wash{opacity:.67;transition:opacity .2s}
-      .label{font-family:Georgia,'Times New Roman',serif;font-size:31px;font-weight:600;fill:var(--ink);letter-spacing:-.01em}.meta{font-family:Arial,sans-serif;font-size:12px;fill:var(--muted);letter-spacing:.13em}.small{font-family:Arial,sans-serif;font-size:11px;fill:var(--muted);letter-spacing:.1em}.note{font-family:Georgia,'Times New Roman',serif;font-size:16px;font-style:italic;fill:#6b655d}.index{font-family:Arial,sans-serif;font-size:12px;fill:#5e5952}.node{fill:var(--accent)}.node-ring{fill:#f7f3eb;stroke:var(--accent);stroke-width:2}.node-label{font-family:Georgia,'Times New Roman',serif;font-size:23px;font-weight:600;fill:var(--ink)}.node-meta{font-family:Arial,sans-serif;font-size:10px;fill:var(--accent);letter-spacing:.16em}.hotspot{fill:transparent;stroke:none;cursor:pointer}
+      .label{font-family:Georgia,'Times New Roman',serif;font-size:31px;font-weight:600;fill:var(--ink);letter-spacing:-.01em}.meta{font-family:Arial,sans-serif;font-size:12px;fill:var(--muted);letter-spacing:.13em}.small{font-family:Arial,sans-serif;font-size:11px;fill:var(--muted);letter-spacing:.1em}.note{font-family:Georgia,'Times New Roman',serif;font-size:16px;font-style:italic;fill:#6b655d}.node{fill:var(--accent)}.node-ring{fill:#f7f3eb;stroke:var(--accent);stroke-width:2}.node-label{font-family:Georgia,'Times New Roman',serif;font-size:23px;font-weight:600;fill:var(--ink)}.node-meta{font-family:Arial,sans-serif;font-size:10px;fill:var(--accent);letter-spacing:.16em}.hotspot{fill:transparent;stroke:none;cursor:pointer}
+      a:hover .label{fill:var(--accent)}a:hover .wash{opacity:.9}
     </style>
   </defs>
 
   <rect class="bg" width="1600" height="920"/>
   <rect class="frame" x="18" y="18" width="1564" height="884"/>
 
-  <!-- one connected landform -->
   <path class="outline" d="M142 236 C238 122 433 86 574 137 C693 70 870 86 978 142 C1113 92 1290 151 1370 271 C1448 389 1432 558 1334 673 C1235 789 1088 829 943 786 C824 855 665 857 550 795 C396 827 238 755 166 642 C96 532 87 355 142 236Z"/>
 
-  <!-- district washes -->
-  <g class="district" id="engineering-zone"><path class="wash" fill="var(--e)" d="M164 258 C252 164 390 132 508 162 C571 179 606 228 596 294 C583 370 512 420 420 429 C322 438 229 407 182 346 C158 315 152 284 164 258Z"/></g>
-  <g class="district" id="research-zone"><path class="wash" fill="var(--r)" d="M560 151 C659 101 808 106 916 157 C976 185 1005 247 982 312 C954 385 865 422 767 407 C673 393 606 352 579 292 C556 241 547 183 560 151Z"/></g>
-  <g class="district" id="writing-zone"><path class="wash" fill="var(--w)" d="M966 235 C1061 170 1223 190 1312 280 C1386 355 1385 482 1326 568 C1274 644 1167 679 1076 650 C990 624 928 557 924 475 C920 386 932 287 966 235Z"/></g>
-  <g class="district" id="learning-zone"><path class="wash" fill="var(--l)" d="M157 429 C238 382 368 387 450 441 C510 481 527 564 493 630 C453 710 351 749 260 720 C184 696 131 630 126 552 C122 499 132 454 157 429Z"/></g>
-  <g class="district" id="making-zone"><path class="wash" fill="var(--m)" d="M466 510 C555 448 694 449 786 512 C852 557 869 650 824 715 C777 783 675 814 585 781 C502 751 450 682 452 604 C453 566 457 534 466 510Z"/></g>
-  <g class="district" id="stage-zone"><path class="wash" fill="var(--s)" d="M806 472 C900 425 1037 438 1125 503 C1194 554 1210 646 1164 711 C1117 777 1013 804 924 774 C844 747 791 682 786 609 C783 552 787 503 806 472Z"/></g>
+  <path class="wash" fill="var(--e)" d="M164 258 C252 164 390 132 508 162 C571 179 606 228 596 294 C583 370 512 420 420 429 C322 438 229 407 182 346 C158 315 152 284 164 258Z"/>
+  <path class="wash" fill="var(--r)" d="M560 151 C659 101 808 106 916 157 C976 185 1005 247 982 312 C954 385 865 422 767 407 C673 393 606 352 579 292 C556 241 547 183 560 151Z"/>
+  <path class="wash" fill="var(--w)" d="M966 235 C1061 170 1223 190 1312 280 C1386 355 1385 482 1326 568 C1274 644 1167 679 1076 650 C990 624 928 557 924 475 C920 386 932 287 966 235Z"/>
+  <path class="wash" fill="var(--l)" d="M157 429 C238 382 368 387 450 441 C510 481 527 564 493 630 C453 710 351 749 260 720 C184 696 131 630 126 552 C122 499 132 454 157 429Z"/>
+  <path class="wash" fill="var(--m)" d="M466 510 C555 448 694 449 786 512 C852 557 869 650 824 715 C777 783 675 814 585 781 C502 751 450 682 452 604 C453 566 457 534 466 510Z"/>
+  <path class="wash" fill="var(--s)" d="M806 472 C900 425 1037 438 1125 503 C1194 554 1210 646 1164 711 C1117 777 1013 804 924 774 C844 747 791 682 786 609 C783 552 787 503 806 472Z"/>
 
-  <!-- contours -->
   <path class="contour" d="M174 292 C298 232 429 228 557 273 C697 322 844 298 971 252 C1101 205 1240 224 1354 320"/>
   <path class="contour" d="M145 362 C284 313 409 320 537 354 C689 394 831 383 981 344 C1113 309 1260 326 1373 403"/>
   <path class="contour" d="M132 468 C259 432 388 440 511 475 C648 513 807 512 943 470 C1094 423 1238 441 1360 517"/>
   <path class="contour" d="M139 567 C275 531 403 544 522 580 C655 620 795 620 928 586 C1074 549 1217 566 1334 630"/>
   <path class="contour" d="M190 659 C309 628 430 639 548 674 C680 713 814 707 935 675 C1044 646 1165 658 1268 707"/>
 
-  <!-- boundaries -->
   <path class="border" d="M593 197 C575 311 605 399 667 469"/>
   <path class="border" d="M929 195 C908 306 896 391 897 472"/>
   <path class="border" d="M447 427 C544 454 610 491 655 536"/>
   <path class="border" d="M793 458 C748 511 728 557 722 613"/>
   <path class="border" d="M893 473 C850 532 833 590 841 659"/>
 
-  <!-- river and paths -->
   <path class="river" d="M752 127 C736 216 753 302 716 375 C689 430 653 469 649 528 C646 579 679 619 664 686 C654 730 633 757 620 787"/>
   <path class="road" d="M706 455 C576 414 461 364 367 318"/>
   <path class="road" d="M724 447 C755 365 790 292 824 229"/>
@@ -47,40 +43,20 @@
   <path class="road" d="M703 485 C617 548 566 611 548 680"/>
   <path class="road" d="M747 489 C830 546 888 607 944 667"/>
 
-  <!-- understated labels -->
-  <a href="index.html#engineering"><rect class="hotspot" x="155" y="155" width="450" height="280"/><text class="label" x="285" y="297">Engineering</text><text class="meta" x="286" y="321">PRODUCT · SYSTEMS · ARCHITECTURE</text></a>
-  <a href="index.html#research"><rect class="hotspot" x="555" y="120" width="430" height="300"/><text class="label" x="730" y="250">Research</text><text class="meta" x="731" y="274">PAPERS · EXPERIMENTS · EVALUATION</text></a>
-  <a href="index.html#writing"><rect class="hotspot" x="925" y="195" width="455" height="465"/><text class="label" x="1071" y="422">Writing</text><text class="meta" x="1072" y="446">ESSAYS · NOTES · EXPLANATIONS</text></a>
-  <a href="index.html#education"><rect class="hotspot" x="120" y="385" width="390" height="350"/><text class="label" x="238" y="617">Learning</text><text class="meta" x="239" y="641">IITM · IIITB · LJMU · BEYOND</text></a>
-  <a href="index.html#making"><rect class="hotspot" x="450" y="480" width="385" height="330"/><text class="label" x="543" y="690">Making</text><text class="meta" x="544" y="714">DRAWING · SIDE PROJECTS · PLAY</text></a>
-  <a href="index.html#making"><rect class="hotspot" x="790" y="455" width="400" height="330"/><text class="label" x="905" y="686">Stage &amp; people</text><text class="meta" x="906" y="710">SPEAKING · COMEDY · COMMUNITY</text></a>
+  <a href="index.html#engineering" target="_top"><rect class="hotspot" x="155" y="155" width="450" height="280"/><text class="label" x="285" y="305">Engineering</text></a>
+  <a href="index.html#research" target="_top"><rect class="hotspot" x="555" y="120" width="430" height="300"/><text class="label" x="730" y="256">Research</text></a>
+  <a href="index.html#writing" target="_top"><rect class="hotspot" x="925" y="195" width="455" height="465"/><text class="label" x="1071" y="430">Writing</text></a>
+  <a href="index.html#education" target="_top"><rect class="hotspot" x="120" y="385" width="390" height="350"/><text class="label" x="238" y="625">Learning</text></a>
+  <a href="index.html#making" target="_top"><rect class="hotspot" x="450" y="480" width="385" height="330"/><text class="label" x="543" y="698">Making</text></a>
+  <a href="index.html#making" target="_top"><rect class="hotspot" x="790" y="455" width="400" height="330"/><text class="label" x="905" y="694">Stage &amp; people</text></a>
 
-  <!-- centre -->
-  <a href="index.html#about">
+  <a href="index.html#about" target="_top">
     <circle class="node-ring" cx="710" cy="468" r="29"/><circle class="node" cx="710" cy="468" r="7"/>
     <text class="node-meta" x="710" y="420" text-anchor="middle">YOU ARE HERE</text>
     <text class="node-label" x="710" y="515" text-anchor="middle">Anirudh</text>
-    <text class="small" x="710" y="536" text-anchor="middle">the person between the places</text>
   </a>
 
-  <!-- edge notes -->
   <path class="border" d="M1321 129 C1441 113 1510 177 1502 272"/>
   <text class="meta" x="1368" y="170">UNMAPPED</text>
   <text class="note" x="1368" y="197">Whatever comes next.</text>
-
-  <!-- quiet key -->
-  <g transform="translate(1260 574)">
-    <text class="meta" x="0" y="0">INDEX</text>
-    <g class="index" transform="translate(0 28)">
-      <circle cx="4" cy="0" r="3" fill="#8f4d3f"/><text x="18" y="4">Engineering</text>
-      <circle cx="4" cy="24" r="3" fill="#8f4d3f"/><text x="18" y="28">Research</text>
-      <circle cx="4" cy="48" r="3" fill="#8f4d3f"/><text x="18" y="52">Learning</text>
-      <circle cx="4" cy="72" r="3" fill="#8f4d3f"/><text x="18" y="76">Writing</text>
-      <circle cx="4" cy="96" r="3" fill="#8f4d3f"/><text x="18" y="100">Making / Stage</text>
-      <circle cx="4" cy="120" r="3" fill="#8f4d3f"/><text x="18" y="124">Anirudh</text>
-    </g>
-  </g>
-
-  <text class="small" x="54" y="862">CLICK A LABEL OR REGION TO OPEN IT</text>
-  <text class="note" x="1545" y="862" text-anchor="end">Same person. Different directions.</text>
 </svg>
